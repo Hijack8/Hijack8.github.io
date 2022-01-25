@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 5.4.0">
+<meta name="generator" content="Hexo 5.4.1">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
@@ -27,44 +27,44 @@
 <meta property="og:site_name" content="ShallowLine&#39;sBlog">
 <meta property="og:description" content="前端三件套之二CSS—–上 CSS部分内容较多，这里先介绍CSS的基础知识">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://hijack8.github.io/.io//image-20220116161141645.png">
-<meta property="og:image" content="http://hijack8.github.io/.io//image-20220116161311148.png">
-<meta property="og:image" content="http://hijack8.github.io/.io//image-20220116161340536.png">
-<meta property="og:image" content="http://hijack8.github.io/.io//image-20220116161347848.png">
-<meta property="og:image" content="http://hijack8.github.io/.io//image-20220116161711387.png">
-<meta property="og:image" content="http://hijack8.github.io/.io//image-20220116161921884.png">
-<meta property="og:image" content="http://hijack8.github.io/.io//image-20220116162005337.png">
-<meta property="og:image" content="http://hijack8.github.io/.io//image-20220116162042238.png">
-<meta property="og:image" content="http://hijack8.github.io/.io//image-20220116162103139.png">
-<meta property="og:image" content="http://hijack8.github.io/.io//image-20220116162155676.png">
-<meta property="og:image" content="http://hijack8.github.io/.io//image-20220116162302841.png">
-<meta property="og:image" content="http://hijack8.github.io/.io//image-20220116162350679.png">
-<meta property="og:image" content="http://hijack8.github.io/.io//image-20220116162423568.png">
-<meta property="og:image" content="http://hijack8.github.io/.io//image-20220116162706313.png">
-<meta property="og:image" content="http://hijack8.github.io/.io//image-20220116162757724.png">
-<meta property="og:image" content="http://hijack8.github.io/.io//image-20220116162940189.png">
-<meta property="og:image" content="http://hijack8.github.io/.io//image-20220116163336664.png">
-<meta property="og:image" content="http://hijack8.github.io/.io//image-20220116163438717.png">
-<meta property="og:image" content="http://hijack8.github.io/.io//image-20220116163544163.png">
-<meta property="og:image" content="http://hijack8.github.io/.io//image-20220116164050218.png">
-<meta property="og:image" content="http://hijack8.github.io/.io//image-20220116164424541.png">
-<meta property="og:image" content="http://hijack8.github.io/.io//image-20220116164710366.png">
-<meta property="og:image" content="http://hijack8.github.io/.io//image-20220116164814883.png">
-<meta property="og:image" content="http://hijack8.github.io/.io//image-20220116165548899.png">
-<meta property="og:image" content="http://hijack8.github.io/.io//image-20220116170035317.png">
-<meta property="og:image" content="http://hijack8.github.io/.io//image-20220116170308444.png">
-<meta property="og:image" content="http://hijack8.github.io/.io//image-20220116170434856.png">
-<meta property="og:image" content="http://hijack8.github.io/.io//image-20220116170558455.png">
-<meta property="og:image" content="http://hijack8.github.io/.io//image-20220116170716468.png">
-<meta property="og:image" content="http://hijack8.github.io/.io//image-20220116170829982.png">
-<meta property="og:image" content="http://hijack8.github.io/.io//image-20220116180213351.png">
+<meta property="og:image" content="http://hijack8.github.io/2022/01/16/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E4%B9%8BCSS-%E4%B8%8A/image-20220116161141645.png">
+<meta property="og:image" content="http://hijack8.github.io/2022/01/16/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E4%B9%8BCSS-%E4%B8%8A/image-20220116161311148.png">
+<meta property="og:image" content="http://hijack8.github.io/2022/01/16/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E4%B9%8BCSS-%E4%B8%8A/image-20220116161340536.png">
+<meta property="og:image" content="http://hijack8.github.io/2022/01/16/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E4%B9%8BCSS-%E4%B8%8A/image-20220116161347848.png">
+<meta property="og:image" content="http://hijack8.github.io/2022/01/16/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E4%B9%8BCSS-%E4%B8%8A/image-20220116161711387.png">
+<meta property="og:image" content="http://hijack8.github.io/2022/01/16/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E4%B9%8BCSS-%E4%B8%8A/image-20220116161921884.png">
+<meta property="og:image" content="http://hijack8.github.io/2022/01/16/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E4%B9%8BCSS-%E4%B8%8A/image-20220116162005337.png">
+<meta property="og:image" content="http://hijack8.github.io/2022/01/16/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E4%B9%8BCSS-%E4%B8%8A/image-20220116162042238.png">
+<meta property="og:image" content="http://hijack8.github.io/2022/01/16/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E4%B9%8BCSS-%E4%B8%8A/image-20220116162103139.png">
+<meta property="og:image" content="http://hijack8.github.io/2022/01/16/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E4%B9%8BCSS-%E4%B8%8A/image-20220116162155676.png">
+<meta property="og:image" content="http://hijack8.github.io/2022/01/16/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E4%B9%8BCSS-%E4%B8%8A/image-20220116162302841.png">
+<meta property="og:image" content="http://hijack8.github.io/2022/01/16/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E4%B9%8BCSS-%E4%B8%8A/image-20220116162350679.png">
+<meta property="og:image" content="http://hijack8.github.io/2022/01/16/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E4%B9%8BCSS-%E4%B8%8A/image-20220116162423568.png">
+<meta property="og:image" content="http://hijack8.github.io/2022/01/16/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E4%B9%8BCSS-%E4%B8%8A/image-20220116162706313.png">
+<meta property="og:image" content="http://hijack8.github.io/2022/01/16/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E4%B9%8BCSS-%E4%B8%8A/image-20220116162757724.png">
+<meta property="og:image" content="http://hijack8.github.io/2022/01/16/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E4%B9%8BCSS-%E4%B8%8A/image-20220116162940189.png">
+<meta property="og:image" content="http://hijack8.github.io/2022/01/16/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E4%B9%8BCSS-%E4%B8%8A/image-20220116163336664.png">
+<meta property="og:image" content="http://hijack8.github.io/2022/01/16/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E4%B9%8BCSS-%E4%B8%8A/image-20220116163438717.png">
+<meta property="og:image" content="http://hijack8.github.io/2022/01/16/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E4%B9%8BCSS-%E4%B8%8A/image-20220116163544163.png">
+<meta property="og:image" content="http://hijack8.github.io/2022/01/16/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E4%B9%8BCSS-%E4%B8%8A/image-20220116164050218.png">
+<meta property="og:image" content="http://hijack8.github.io/2022/01/16/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E4%B9%8BCSS-%E4%B8%8A/image-20220116164424541.png">
+<meta property="og:image" content="http://hijack8.github.io/2022/01/16/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E4%B9%8BCSS-%E4%B8%8A/image-20220116164710366.png">
+<meta property="og:image" content="http://hijack8.github.io/2022/01/16/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E4%B9%8BCSS-%E4%B8%8A/image-20220116164814883.png">
+<meta property="og:image" content="http://hijack8.github.io/2022/01/16/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E4%B9%8BCSS-%E4%B8%8A/image-20220116165548899.png">
+<meta property="og:image" content="http://hijack8.github.io/2022/01/16/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E4%B9%8BCSS-%E4%B8%8A/image-20220116170035317.png">
+<meta property="og:image" content="http://hijack8.github.io/2022/01/16/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E4%B9%8BCSS-%E4%B8%8A/image-20220116170308444.png">
+<meta property="og:image" content="http://hijack8.github.io/2022/01/16/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E4%B9%8BCSS-%E4%B8%8A/image-20220116170434856.png">
+<meta property="og:image" content="http://hijack8.github.io/2022/01/16/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E4%B9%8BCSS-%E4%B8%8A/image-20220116170558455.png">
+<meta property="og:image" content="http://hijack8.github.io/2022/01/16/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E4%B9%8BCSS-%E4%B8%8A/image-20220116170716468.png">
+<meta property="og:image" content="http://hijack8.github.io/2022/01/16/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E4%B9%8BCSS-%E4%B8%8A/image-20220116170829982.png">
+<meta property="og:image" content="http://hijack8.github.io/2022/01/16/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E4%B9%8BCSS-%E4%B8%8A/image-20220116180213351.png">
 <meta property="article:published_time" content="2022-01-16T14:50:34.000Z">
 <meta property="article:modified_time" content="2022-01-25T02:07:41.253Z">
 <meta property="article:author" content="ShallowLine">
 <meta property="article:tag" content="前端">
 <meta property="article:tag" content="css">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://hijack8.github.io/.io//image-20220116161141645.png">
+<meta name="twitter:image" content="http://hijack8.github.io/2022/01/16/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E4%B9%8BCSS-%E4%B8%8A/image-20220116161141645.png">
 
 <link rel="canonical" href="http://hijack8.github.io/2022/01/16/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E4%B9%8BCSS-%E4%B8%8A/">
 
@@ -165,12 +165,12 @@
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">11</span></a>
+    <a href="/categories" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">12</span></a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">17</span></a>
+    <a href="/archives" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">19</span></a>
 
   </li>
       <li class="menu-item menu-item-search">
@@ -296,28 +296,28 @@
 <li>属性条目和属性值</li>
 </ol>
 <p>组成。</p>
-<p><img src="/.io//image-20220116161141645.png" alt="image-20220116161141645"></p>
-<h2 id="在html页面中使用"><a href="#在html页面中使用" class="headerlink" title="在html页面中使用"></a>在html页面中使用</h2><h3 id="外链-一般使用"><a href="#外链-一般使用" class="headerlink" title="外链(一般使用)"></a>外链(一般使用)</h3><p><img src="/.io//image-20220116161311148.png" alt="image-20220116161311148"></p>
-<h3 id="嵌入"><a href="#嵌入" class="headerlink" title="嵌入"></a>嵌入</h3><p><img src="/.io//image-20220116161340536.png" alt="image-20220116161340536"></p>
-<h3 id="内联-不推荐"><a href="#内联-不推荐" class="headerlink" title="内联(不推荐)"></a>内联(不推荐)</h3><p><img src="/.io//image-20220116161347848.png" alt="image-20220116161347848"></p>
-<h2 id="CSS是如何工作的"><a href="#CSS是如何工作的" class="headerlink" title="CSS是如何工作的"></a>CSS是如何工作的</h2><p><img src="/.io//image-20220116161711387.png" alt="image-20220116161711387"></p>
+<p><img src="/2022/01/16/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E4%B9%8BCSS-%E4%B8%8A/image-20220116161141645.png" alt="image-20220116161141645"></p>
+<h2 id="在html页面中使用"><a href="#在html页面中使用" class="headerlink" title="在html页面中使用"></a>在html页面中使用</h2><h3 id="外链-一般使用"><a href="#外链-一般使用" class="headerlink" title="外链(一般使用)"></a>外链(一般使用)</h3><p><img src="/2022/01/16/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E4%B9%8BCSS-%E4%B8%8A/image-20220116161311148.png" alt="image-20220116161311148"></p>
+<h3 id="嵌入"><a href="#嵌入" class="headerlink" title="嵌入"></a>嵌入</h3><p><img src="/2022/01/16/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E4%B9%8BCSS-%E4%B8%8A/image-20220116161340536.png" alt="image-20220116161340536"></p>
+<h3 id="内联-不推荐"><a href="#内联-不推荐" class="headerlink" title="内联(不推荐)"></a>内联(不推荐)</h3><p><img src="/2022/01/16/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E4%B9%8BCSS-%E4%B8%8A/image-20220116161347848.png" alt="image-20220116161347848"></p>
+<h2 id="CSS是如何工作的"><a href="#CSS是如何工作的" class="headerlink" title="CSS是如何工作的"></a>CSS是如何工作的</h2><p><img src="/2022/01/16/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E4%B9%8BCSS-%E4%B8%8A/image-20220116161711387.png" alt="image-20220116161711387"></p>
 <p>具体就是</p>
 <p>把DOM树的每个结点都解析出来-&gt; 形成渲染树 -&gt; 展示出具体页面</p>
-<h2 id="选择器"><a href="#选择器" class="headerlink" title="选择器"></a>选择器</h2><p><img src="/.io//image-20220116161921884.png" alt="image-20220116161921884"></p>
+<h2 id="选择器"><a href="#选择器" class="headerlink" title="选择器"></a>选择器</h2><p><img src="/2022/01/16/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E4%B9%8BCSS-%E4%B8%8A/image-20220116161921884.png" alt="image-20220116161921884"></p>
 <h3 id="通配选择器"><a href="#通配选择器" class="headerlink" title="通配选择器"></a>通配选择器</h3><ul>
 <li>使用*匹配所有</li>
 </ul>
-<p><img src="/.io//image-20220116162005337.png" alt="image-20220116162005337"></p>
-<h3 id="标签选择器"><a href="#标签选择器" class="headerlink" title="标签选择器"></a>标签选择器</h3><p><img src="/.io//image-20220116162042238.png" alt="image-20220116162042238"></p>
-<h3 id="id选择器"><a href="#id选择器" class="headerlink" title="id选择器"></a>id选择器</h3><p><img src="/.io//image-20220116162103139.png" alt="image-20220116162103139"></p>
+<p><img src="/2022/01/16/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E4%B9%8BCSS-%E4%B8%8A/image-20220116162005337.png" alt="image-20220116162005337"></p>
+<h3 id="标签选择器"><a href="#标签选择器" class="headerlink" title="标签选择器"></a>标签选择器</h3><p><img src="/2022/01/16/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E4%B9%8BCSS-%E4%B8%8A/image-20220116162042238.png" alt="image-20220116162042238"></p>
+<h3 id="id选择器"><a href="#id选择器" class="headerlink" title="id选择器"></a>id选择器</h3><p><img src="/2022/01/16/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E4%B9%8BCSS-%E4%B8%8A/image-20220116162103139.png" alt="image-20220116162103139"></p>
 <p>id的值要唯一</p>
-<h3 id="类选择器"><a href="#类选择器" class="headerlink" title="类选择器"></a>类选择器</h3><p><img src="/.io//image-20220116162155676.png" alt="image-20220116162155676"></p>
+<h3 id="类选择器"><a href="#类选择器" class="headerlink" title="类选择器"></a>类选择器</h3><p><img src="/2022/01/16/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E4%B9%8BCSS-%E4%B8%8A/image-20220116162155676.png" alt="image-20220116162155676"></p>
 <p>每个标签都可以加上id和class</p>
 <h3 id="属性选择器"><a href="#属性选择器" class="headerlink" title="属性选择器"></a>属性选择器</h3><p>通过属性值选中元素</p>
-<p><img src="/.io//image-20220116162302841.png" alt="image-20220116162302841"></p>
+<p><img src="/2022/01/16/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E4%B9%8BCSS-%E4%B8%8A/image-20220116162302841.png" alt="image-20220116162302841"></p>
 <p>对禁用的输入框设置样式</p>
-<p><img src="/.io//image-20220116162350679.png" alt="image-20220116162350679"></p>
-<p><img src="/.io//image-20220116162423568.png" alt="image-20220116162423568"></p>
+<p><img src="/2022/01/16/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E4%B9%8BCSS-%E4%B8%8A/image-20220116162350679.png" alt="image-20220116162350679"></p>
+<p><img src="/2022/01/16/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E4%B9%8BCSS-%E4%B8%8A/image-20220116162423568.png" alt="image-20220116162423568"></p>
 <p><code>a[href^=&quot;#&quot;]</code>其中<code>^=</code>表示以#为开头。</p>
 <p><code>a[href$=&quot;.jpg&quot;]</code> 其中<code>$=</code>表示以.jpg为结尾。</p>
 <h3 id="伪类"><a href="#伪类" class="headerlink" title="伪类"></a>伪类</h3><h4 id="状态伪类"><a href="#状态伪类" class="headerlink" title="状态伪类"></a>状态伪类</h4><p>为了让一些标签根据状态的变化来进行选择，例如我按下按钮会变颜色，松开按钮颜色恢复。</p>
@@ -328,19 +328,19 @@
 <li>hover鼠标覆盖</li>
 <li>active点击</li>
 </ul>
-<p><img src="/.io//image-20220116162706313.png" alt="image-20220116162706313"></p>
+<p><img src="/2022/01/16/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E4%B9%8BCSS-%E4%B8%8A/image-20220116162706313.png" alt="image-20220116162706313"></p>
 <p>输入框的focus状态</p>
-<p><img src="/.io//image-20220116162757724.png" alt="image-20220116162757724"></p>
+<p><img src="/2022/01/16/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E4%B9%8BCSS-%E4%B8%8A/image-20220116162757724.png" alt="image-20220116162757724"></p>
 <h4 id="结构伪类"><a href="#结构伪类" class="headerlink" title="结构伪类"></a>结构伪类</h4><p>选择li这个标签的第一个child和最后一个child</p>
 <p>使用:</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">li</span><span class="selector-pseudo">:first</span>-child&#123;&#125;</span><br><span class="line"><span class="selector-tag">li</span><span class="selector-pseudo">:last-child</span>&#123;&#125;</span><br></pre></td></tr></table></figure>
 
-<p><img src="/.io//image-20220116162940189.png" alt="image-20220116162940189"></p>
+<p><img src="/2022/01/16/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E4%B9%8BCSS-%E4%B8%8A/image-20220116162940189.png" alt="image-20220116162940189"></p>
 <h2 id="组合"><a href="#组合" class="headerlink" title="组合"></a>组合</h2><p>通过组合更精确地选择。</p>
-<p><img src="/.io//image-20220116163336664.png" alt="image-20220116163336664"></p>
-<p><img src="/.io//image-20220116163438717.png" alt="image-20220116163438717"></p>
+<p><img src="/2022/01/16/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E4%B9%8BCSS-%E4%B8%8A/image-20220116163336664.png" alt="image-20220116163336664"></p>
+<p><img src="/2022/01/16/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E4%B9%8BCSS-%E4%B8%8A/image-20220116163438717.png" alt="image-20220116163438717"></p>
 <h2 id="选择器组"><a href="#选择器组" class="headerlink" title="选择器组"></a>选择器组</h2><p>通过，可以连续合并多个选择器，选择器之间是或的关系。</p>
-<p><img src="/.io//image-20220116163544163.png" alt="image-20220116163544163"></p>
+<p><img src="/2022/01/16/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E4%B9%8BCSS-%E4%B8%8A/image-20220116163544163.png" alt="image-20220116163544163"></p>
 <h2 id="设置文字的样式"><a href="#设置文字的样式" class="headerlink" title="设置文字的样式"></a>设置文字的样式</h2><h3 id="颜色-RGB"><a href="#颜色-RGB" class="headerlink" title="颜色 - RGB"></a>颜色 - RGB</h3><p>混合红色蓝色绿色</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rgb(<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>)</span><br></pre></td></tr></table></figure>
 
@@ -349,14 +349,14 @@
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-id">#000000</span></span><br></pre></td></tr></table></figure>
 
 <h3 id="颜色-HSL"><a href="#颜色-HSL" class="headerlink" title="颜色 - HSL"></a>颜色 - HSL</h3><p>rgb不太直观</p>
-<p><img src="/.io//image-20220116164050218.png" alt="image-20220116164050218"></p>
+<p><img src="/2022/01/16/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E4%B9%8BCSS-%E4%B8%8A/image-20220116164050218.png" alt="image-20220116164050218"></p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hsl(<span class="number">0</span>,<span class="number">100%</span>,<span class="number">50%</span>)</span><br></pre></td></tr></table></figure>
 
-<h3 id="颜色也可以直接使用关键字"><a href="#颜色也可以直接使用关键字" class="headerlink" title="颜色也可以直接使用关键字"></a>颜色也可以直接使用关键字</h3><h3 id="alpha透明度"><a href="#alpha透明度" class="headerlink" title="alpha透明度"></a>alpha透明度</h3><p><img src="/.io//image-20220116164424541.png" alt="image-20220116164424541"></p>
+<h3 id="颜色也可以直接使用关键字"><a href="#颜色也可以直接使用关键字" class="headerlink" title="颜色也可以直接使用关键字"></a>颜色也可以直接使用关键字</h3><h3 id="alpha透明度"><a href="#alpha透明度" class="headerlink" title="alpha透明度"></a>alpha透明度</h3><p><img src="/2022/01/16/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E4%B9%8BCSS-%E4%B8%8A/image-20220116164424541.png" alt="image-20220116164424541"></p>
 <p>可以使用rgba hsla</p>
-<h3 id="字体-font-family"><a href="#字体-font-family" class="headerlink" title="字体 font-family"></a>字体 font-family</h3><p><img src="/.io//image-20220116164710366.png" alt="image-20220116164710366"></p>
+<h3 id="字体-font-family"><a href="#字体-font-family" class="headerlink" title="字体 font-family"></a>字体 font-family</h3><p><img src="/2022/01/16/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E4%B9%8BCSS-%E4%B8%8A/image-20220116164710366.png" alt="image-20220116164710366"></p>
 <p>最终是使用浏览器渲染的，可以多指定几个，避免本地没有这些字体。</p>
-<p><img src="/.io//image-20220116164814883.png" alt="image-20220116164814883"></p>
+<p><img src="/2022/01/16/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E4%B9%8BCSS-%E4%B8%8A/image-20220116164814883.png" alt="image-20220116164814883"></p>
 <ul>
 <li><p>字体列表最后一个，使用的是通用字体族</p>
 </li>
@@ -364,7 +364,7 @@
 </li>
 </ul>
 <h3 id="WebFonts"><a href="#WebFonts" class="headerlink" title="WebFonts"></a>WebFonts</h3><p>可以将字体放在服务器上，进行调用。</p>
-<p><img src="/.io//image-20220116165548899.png" alt="image-20220116165548899"></p>
+<p><img src="/2022/01/16/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E4%B9%8BCSS-%E4%B8%8A/image-20220116165548899.png" alt="image-20220116165548899"></p>
 <p><strong>如果用中文的话，中文字体文件太大。还要进行特殊处理</strong></p>
 <h3 id="font-size"><a href="#font-size" class="headerlink" title="font-size"></a>font-size</h3><ul>
 <li><p>关键字</p>
@@ -381,16 +381,16 @@
 <li><p>百分数</p>
 </li>
 </ul>
-<h3 id="字的粗细"><a href="#字的粗细" class="headerlink" title="字的粗细"></a>字的粗细</h3><p><img src="/.io//image-20220116170035317.png" alt="image-20220116170035317"></p>
-<h3 id="line-hight行宽"><a href="#line-hight行宽" class="headerlink" title="line hight行宽"></a>line hight行宽</h3><p><img src="/.io//image-20220116170308444.png" alt="image-20220116170308444"></p>
+<h3 id="字的粗细"><a href="#字的粗细" class="headerlink" title="字的粗细"></a>字的粗细</h3><p><img src="/2022/01/16/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E4%B9%8BCSS-%E4%B8%8A/image-20220116170035317.png" alt="image-20220116170035317"></p>
+<h3 id="line-hight行宽"><a href="#line-hight行宽" class="headerlink" title="line hight行宽"></a>line hight行宽</h3><p><img src="/2022/01/16/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E4%B9%8BCSS-%E4%B8%8A/image-20220116170308444.png" alt="image-20220116170308444"></p>
 <p>line-heigh = 1.6*20px</p>
 <h3 id="可以简写"><a href="#可以简写" class="headerlink" title="可以简写"></a><strong>可以简写</strong></h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">font</span>: style weight size/height family</span><br></pre></td></tr></table></figure>
 
-<p><img src="/.io//image-20220116170434856.png" alt="image-20220116170434856"></p>
-<h3 id="text-align对齐方式"><a href="#text-align对齐方式" class="headerlink" title="text-align对齐方式"></a>text-align对齐方式</h3><p><img src="/.io//image-20220116170558455.png" alt="image-20220116170558455"></p>
+<p><img src="/2022/01/16/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E4%B9%8BCSS-%E4%B8%8A/image-20220116170434856.png" alt="image-20220116170434856"></p>
+<h3 id="text-align对齐方式"><a href="#text-align对齐方式" class="headerlink" title="text-align对齐方式"></a>text-align对齐方式</h3><p><img src="/2022/01/16/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E4%B9%8BCSS-%E4%B8%8A/image-20220116170558455.png" alt="image-20220116170558455"></p>
 <p>justify只在除了最后一行外生效。</p>
-<h3 id="spacing字间距"><a href="#spacing字间距" class="headerlink" title="spacing字间距"></a>spacing字间距</h3><p><img src="/.io//image-20220116170716468.png" alt="image-20220116170716468"></p>
-<h3 id="text-indent缩进"><a href="#text-indent缩进" class="headerlink" title="text-indent缩进"></a>text-indent缩进</h3><h3 id="text-decoration文字修饰"><a href="#text-decoration文字修饰" class="headerlink" title="text-decoration文字修饰"></a>text-decoration文字修饰</h3><p><img src="/.io//image-20220116170829982.png" alt="image-20220116170829982"></p>
+<h3 id="spacing字间距"><a href="#spacing字间距" class="headerlink" title="spacing字间距"></a>spacing字间距</h3><p><img src="/2022/01/16/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E4%B9%8BCSS-%E4%B8%8A/image-20220116170716468.png" alt="image-20220116170716468"></p>
+<h3 id="text-indent缩进"><a href="#text-indent缩进" class="headerlink" title="text-indent缩进"></a>text-indent缩进</h3><h3 id="text-decoration文字修饰"><a href="#text-decoration文字修饰" class="headerlink" title="text-decoration文字修饰"></a>text-decoration文字修饰</h3><p><img src="/2022/01/16/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E4%B9%8BCSS-%E4%B8%8A/image-20220116170829982.png" alt="image-20220116170829982"></p>
 <h3 id="white-space"><a href="#white-space" class="headerlink" title="white-space"></a>white-space</h3><p><strong>对于文本是否换行或者空格是否保留。</strong></p>
 <ul>
 <li>normal 默认多个空格合并 且不保留换行</li>
@@ -399,7 +399,7 @@
 <li>pre-wrap  如果一行内显示不下,就换行</li>
 <li>pre line 合并空格 保留换行</li>
 </ul>
-<h2 id="调试CSS"><a href="#调试CSS" class="headerlink" title="调试CSS"></a>调试CSS</h2><p><img src="/.io//image-20220116180213351.png" alt="image-20220116180213351"></p>
+<h2 id="调试CSS"><a href="#调试CSS" class="headerlink" title="调试CSS"></a>调试CSS</h2><p><img src="/2022/01/16/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E4%B9%8BCSS-%E4%B8%8A/image-20220116180213351.png" alt="image-20220116180213351"></p>
 <h2 id="补充和注意"><a href="#补充和注意" class="headerlink" title="补充和注意"></a>补充和注意</h2><h3 id="css配合点积"><a href="#css配合点积" class="headerlink" title="css配合点积"></a>css配合点积</h3><h3 id="jQuery-与-css的配合，jQuery用的不多"><a href="#jQuery-与-css的配合，jQuery用的不多" class="headerlink" title="jQuery 与 css的配合，jQuery用的不多"></a>jQuery 与 css的配合，jQuery用的不多</h3><h3 id="em是相对于父级的fontsize，rem是相对于根级，移动端适用时利用rem"><a href="#em是相对于父级的fontsize，rem是相对于根级，移动端适用时利用rem" class="headerlink" title="em是相对于父级的fontsize，rem是相对于根级，移动端适用时利用rem"></a>em是相对于父级的fontsize，rem是相对于根级，移动端适用时利用rem</h3>
     </div>
 
@@ -501,14 +501,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives">
         
-          <span class="site-state-item-count">17</span>
+          <span class="site-state-item-count">19</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories">
           
-        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-count">12</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
