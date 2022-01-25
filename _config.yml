@@ -1,0 +1,72 @@
+title: ShallowLine'sBlog
+subtitle: 'Blog'
+description: 'Blog of a Programmer'
+keywords: null
+author: ShallowLine
+language: en
+timezone: 'Asia/ShangHai'
+url: http://hijack8.github.io
+permalink: ':year/:month/:day/:title/'
+permalink_defaults: null
+pretty_urls:
+  trailing_index: true
+  trailing_html: true
+source_dir: source
+public_dir: public
+tag_dir: tags
+archive_dir: archives
+category_dir: categories
+code_dir: downloads/code
+i18n_dir: ':lang'
+skip_render: null
+new_post_name: ':title.md'
+default_layout: post
+titlecase: false
+external_link:
+  enable: true
+  field: site
+  exclude: ''
+filename_case: 0
+render_drafts: false
+post_asset_folder: true
+relative_link: false
+future: true
+highlight:
+  enable: true
+  line_number: true
+  auto_detect: false
+  tab_replace: ''
+  wrap: true
+  hljs: false
+prismjs:
+  enable: false
+  preprocess: true
+  line_number: true
+  tab_replace: ''
+index_generator:
+  path: ''
+  per_page: 10
+  order_by: '-date'
+default_category: uncategorized
+category_map: null
+tag_map: null
+meta_generator: true
+date_format: YYYY-MM-DD
+time_format: HH:mm:ss
+updated_option: mtime
+per_page: 10
+pagination_dir: page
+include: null
+exclude: null
+ignore: null
+theme: next
+deploy:
+  type: git
+  repository: https://github.com/Hijack8/Hijack8.github.io.git
+  branch: main
+search:
+  path: search.json #之前就是这里出了问题导致图标错误，错误的教程是 search.xml
+  field: post
+  format: html
+  limit: 1000
+ 
