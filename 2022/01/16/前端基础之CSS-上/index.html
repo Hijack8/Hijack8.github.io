@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib1/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"hijack8.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.json"};
+  </script>
+
+  <meta name="description" content="前端三件套之二CSS—–上 CSS部分内容较多，这里先介绍CSS的基础知识">
+<meta property="og:type" content="article">
+<meta property="og:title" content="前端基础之CSS---上">
+<meta property="og:url" content="http://hijack8.github.io/2022/01/16/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E4%B9%8BCSS-%E4%B8%8A/index.html">
+<meta property="og:site_name" content="ShallowLine&#39;sBlog">
+<meta property="og:description" content="前端三件套之二CSS—–上 CSS部分内容较多，这里先介绍CSS的基础知识">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://hijack8.github.io/.io//image-20220116161141645.png">
+<meta property="og:image" content="http://hijack8.github.io/.io//image-20220116161311148.png">
+<meta property="og:image" content="http://hijack8.github.io/.io//image-20220116161340536.png">
+<meta property="og:image" content="http://hijack8.github.io/.io//image-20220116161347848.png">
+<meta property="og:image" content="http://hijack8.github.io/.io//image-20220116161711387.png">
+<meta property="og:image" content="http://hijack8.github.io/.io//image-20220116161921884.png">
+<meta property="og:image" content="http://hijack8.github.io/.io//image-20220116162005337.png">
+<meta property="og:image" content="http://hijack8.github.io/.io//image-20220116162042238.png">
+<meta property="og:image" content="http://hijack8.github.io/.io//image-20220116162103139.png">
+<meta property="og:image" content="http://hijack8.github.io/.io//image-20220116162155676.png">
+<meta property="og:image" content="http://hijack8.github.io/.io//image-20220116162302841.png">
+<meta property="og:image" content="http://hijack8.github.io/.io//image-20220116162350679.png">
+<meta property="og:image" content="http://hijack8.github.io/.io//image-20220116162423568.png">
+<meta property="og:image" content="http://hijack8.github.io/.io//image-20220116162706313.png">
+<meta property="og:image" content="http://hijack8.github.io/.io//image-20220116162757724.png">
+<meta property="og:image" content="http://hijack8.github.io/.io//image-20220116162940189.png">
+<meta property="og:image" content="http://hijack8.github.io/.io//image-20220116163336664.png">
+<meta property="og:image" content="http://hijack8.github.io/.io//image-20220116163438717.png">
+<meta property="og:image" content="http://hijack8.github.io/.io//image-20220116163544163.png">
+<meta property="og:image" content="http://hijack8.github.io/.io//image-20220116164050218.png">
+<meta property="og:image" content="http://hijack8.github.io/.io//image-20220116164424541.png">
+<meta property="og:image" content="http://hijack8.github.io/.io//image-20220116164710366.png">
+<meta property="og:image" content="http://hijack8.github.io/.io//image-20220116164814883.png">
+<meta property="og:image" content="http://hijack8.github.io/.io//image-20220116165548899.png">
+<meta property="og:image" content="http://hijack8.github.io/.io//image-20220116170035317.png">
+<meta property="og:image" content="http://hijack8.github.io/.io//image-20220116170308444.png">
+<meta property="og:image" content="http://hijack8.github.io/.io//image-20220116170434856.png">
+<meta property="og:image" content="http://hijack8.github.io/.io//image-20220116170558455.png">
+<meta property="og:image" content="http://hijack8.github.io/.io//image-20220116170716468.png">
+<meta property="og:image" content="http://hijack8.github.io/.io//image-20220116170829982.png">
+<meta property="og:image" content="http://hijack8.github.io/.io//image-20220116180213351.png">
+<meta property="article:published_time" content="2022-01-16T14:50:34.000Z">
+<meta property="article:modified_time" content="2022-01-25T02:07:41.253Z">
+<meta property="article:author" content="ShallowLine">
+<meta property="article:tag" content="前端">
+<meta property="article:tag" content="css">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://hijack8.github.io/.io//image-20220116161141645.png">
+
+<link rel="canonical" href="http://hijack8.github.io/2022/01/16/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E4%B9%8BCSS-%E4%B8%8A/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>前端基础之CSS---上 | ShallowLine'sBlog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">ShallowLine'sBlog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">Blog</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">23</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">11</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">17</span></a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://hijack8.github.io/2022/01/16/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E4%B9%8BCSS-%E4%B8%8A/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/haocun.jpg">
+      <meta itemprop="name" content="ShallowLine">
+      <meta itemprop="description" content="Blog of a Programmer">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ShallowLine'sBlog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          前端基础之CSS---上
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2022-01-16 22:50:34" itemprop="dateCreated datePublished" datetime="2022-01-16T22:50:34+08:00">2022-01-16</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-01-25 10:07:41" itemprop="dateModified" datetime="2022-01-25T10:07:41+08:00">2022-01-25</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%89%8D%E7%AB%AF/" itemprop="url" rel="index"><span itemprop="name">前端</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%89%8D%E7%AB%AF/CSS/" itemprop="url" rel="index"><span itemprop="name">CSS</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>前端三件套之二CSS—–上</p>
+<p>CSS部分内容较多，这里先介绍CSS的基础知识</p>
+<span id="more"></span>
+
+<h2 id="格式"><a href="#格式" class="headerlink" title="格式"></a>格式</h2><h3 id="CSS是一堆什么东西呢？"><a href="#CSS是一堆什么东西呢？" class="headerlink" title="CSS是一堆什么东西呢？"></a>CSS是一堆什么东西呢？</h3><p>一条条的规则，下图就是一条规则。</p>
+<p>规则由</p>
+<ol>
+<li>选择器</li>
+<li>属性条目和属性值</li>
+</ol>
+<p>组成。</p>
+<p><img src="/.io//image-20220116161141645.png" alt="image-20220116161141645"></p>
+<h2 id="在html页面中使用"><a href="#在html页面中使用" class="headerlink" title="在html页面中使用"></a>在html页面中使用</h2><h3 id="外链-一般使用"><a href="#外链-一般使用" class="headerlink" title="外链(一般使用)"></a>外链(一般使用)</h3><p><img src="/.io//image-20220116161311148.png" alt="image-20220116161311148"></p>
+<h3 id="嵌入"><a href="#嵌入" class="headerlink" title="嵌入"></a>嵌入</h3><p><img src="/.io//image-20220116161340536.png" alt="image-20220116161340536"></p>
+<h3 id="内联-不推荐"><a href="#内联-不推荐" class="headerlink" title="内联(不推荐)"></a>内联(不推荐)</h3><p><img src="/.io//image-20220116161347848.png" alt="image-20220116161347848"></p>
+<h2 id="CSS是如何工作的"><a href="#CSS是如何工作的" class="headerlink" title="CSS是如何工作的"></a>CSS是如何工作的</h2><p><img src="/.io//image-20220116161711387.png" alt="image-20220116161711387"></p>
+<p>具体就是</p>
+<p>把DOM树的每个结点都解析出来-&gt; 形成渲染树 -&gt; 展示出具体页面</p>
+<h2 id="选择器"><a href="#选择器" class="headerlink" title="选择器"></a>选择器</h2><p><img src="/.io//image-20220116161921884.png" alt="image-20220116161921884"></p>
+<h3 id="通配选择器"><a href="#通配选择器" class="headerlink" title="通配选择器"></a>通配选择器</h3><ul>
+<li>使用*匹配所有</li>
+</ul>
+<p><img src="/.io//image-20220116162005337.png" alt="image-20220116162005337"></p>
+<h3 id="标签选择器"><a href="#标签选择器" class="headerlink" title="标签选择器"></a>标签选择器</h3><p><img src="/.io//image-20220116162042238.png" alt="image-20220116162042238"></p>
+<h3 id="id选择器"><a href="#id选择器" class="headerlink" title="id选择器"></a>id选择器</h3><p><img src="/.io//image-20220116162103139.png" alt="image-20220116162103139"></p>
+<p>id的值要唯一</p>
+<h3 id="类选择器"><a href="#类选择器" class="headerlink" title="类选择器"></a>类选择器</h3><p><img src="/.io//image-20220116162155676.png" alt="image-20220116162155676"></p>
+<p>每个标签都可以加上id和class</p>
+<h3 id="属性选择器"><a href="#属性选择器" class="headerlink" title="属性选择器"></a>属性选择器</h3><p>通过属性值选中元素</p>
+<p><img src="/.io//image-20220116162302841.png" alt="image-20220116162302841"></p>
+<p>对禁用的输入框设置样式</p>
+<p><img src="/.io//image-20220116162350679.png" alt="image-20220116162350679"></p>
+<p><img src="/.io//image-20220116162423568.png" alt="image-20220116162423568"></p>
+<p><code>a[href^=&quot;#&quot;]</code>其中<code>^=</code>表示以#为开头。</p>
+<p><code>a[href$=&quot;.jpg&quot;]</code> 其中<code>$=</code>表示以.jpg为结尾。</p>
+<h3 id="伪类"><a href="#伪类" class="headerlink" title="伪类"></a>伪类</h3><h4 id="状态伪类"><a href="#状态伪类" class="headerlink" title="状态伪类"></a>状态伪类</h4><p>为了让一些标签根据状态的变化来进行选择，例如我按下按钮会变颜色，松开按钮颜色恢复。</p>
+<p>例如这个链接的四种状态：</p>
+<ul>
+<li>link正常</li>
+<li>visited访问过</li>
+<li>hover鼠标覆盖</li>
+<li>active点击</li>
+</ul>
+<p><img src="/.io//image-20220116162706313.png" alt="image-20220116162706313"></p>
+<p>输入框的focus状态</p>
+<p><img src="/.io//image-20220116162757724.png" alt="image-20220116162757724"></p>
+<h4 id="结构伪类"><a href="#结构伪类" class="headerlink" title="结构伪类"></a>结构伪类</h4><p>选择li这个标签的第一个child和最后一个child</p>
+<p>使用:</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">li</span><span class="selector-pseudo">:first</span>-child&#123;&#125;</span><br><span class="line"><span class="selector-tag">li</span><span class="selector-pseudo">:last-child</span>&#123;&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="/.io//image-20220116162940189.png" alt="image-20220116162940189"></p>
+<h2 id="组合"><a href="#组合" class="headerlink" title="组合"></a>组合</h2><p>通过组合更精确地选择。</p>
+<p><img src="/.io//image-20220116163336664.png" alt="image-20220116163336664"></p>
+<p><img src="/.io//image-20220116163438717.png" alt="image-20220116163438717"></p>
+<h2 id="选择器组"><a href="#选择器组" class="headerlink" title="选择器组"></a>选择器组</h2><p>通过，可以连续合并多个选择器，选择器之间是或的关系。</p>
+<p><img src="/.io//image-20220116163544163.png" alt="image-20220116163544163"></p>
+<h2 id="设置文字的样式"><a href="#设置文字的样式" class="headerlink" title="设置文字的样式"></a>设置文字的样式</h2><h3 id="颜色-RGB"><a href="#颜色-RGB" class="headerlink" title="颜色 - RGB"></a>颜色 - RGB</h3><p>混合红色蓝色绿色</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rgb(<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>)</span><br></pre></td></tr></table></figure>
+
+<p>取值范围0~255</p>
+<p>另外一种方法：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-id">#000000</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="颜色-HSL"><a href="#颜色-HSL" class="headerlink" title="颜色 - HSL"></a>颜色 - HSL</h3><p>rgb不太直观</p>
+<p><img src="/.io//image-20220116164050218.png" alt="image-20220116164050218"></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hsl(<span class="number">0</span>,<span class="number">100%</span>,<span class="number">50%</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="颜色也可以直接使用关键字"><a href="#颜色也可以直接使用关键字" class="headerlink" title="颜色也可以直接使用关键字"></a>颜色也可以直接使用关键字</h3><h3 id="alpha透明度"><a href="#alpha透明度" class="headerlink" title="alpha透明度"></a>alpha透明度</h3><p><img src="/.io//image-20220116164424541.png" alt="image-20220116164424541"></p>
+<p>可以使用rgba hsla</p>
+<h3 id="字体-font-family"><a href="#字体-font-family" class="headerlink" title="字体 font-family"></a>字体 font-family</h3><p><img src="/.io//image-20220116164710366.png" alt="image-20220116164710366"></p>
+<p>最终是使用浏览器渲染的，可以多指定几个，避免本地没有这些字体。</p>
+<p><img src="/.io//image-20220116164814883.png" alt="image-20220116164814883"></p>
+<ul>
+<li><p>字体列表最后一个，使用的是通用字体族</p>
+</li>
+<li><p>英文字体放在中文字体前。英文字体渲染不出中文字体，但是中文字体可以渲染英文字体</p>
+</li>
+</ul>
+<h3 id="WebFonts"><a href="#WebFonts" class="headerlink" title="WebFonts"></a>WebFonts</h3><p>可以将字体放在服务器上，进行调用。</p>
+<p><img src="/.io//image-20220116165548899.png" alt="image-20220116165548899"></p>
+<p><strong>如果用中文的话，中文字体文件太大。还要进行特殊处理</strong></p>
+<h3 id="font-size"><a href="#font-size" class="headerlink" title="font-size"></a>font-size</h3><ul>
+<li><p>关键字</p>
+<ul>
+<li>small</li>
+</ul>
+</li>
+<li><p>长度</p>
+<ul>
+<li>px</li>
+<li>em  这是相对的</li>
+</ul>
+</li>
+<li><p>百分数</p>
+</li>
+</ul>
+<h3 id="字的粗细"><a href="#字的粗细" class="headerlink" title="字的粗细"></a>字的粗细</h3><p><img src="/.io//image-20220116170035317.png" alt="image-20220116170035317"></p>
+<h3 id="line-hight行宽"><a href="#line-hight行宽" class="headerlink" title="line hight行宽"></a>line hight行宽</h3><p><img src="/.io//image-20220116170308444.png" alt="image-20220116170308444"></p>
+<p>line-heigh = 1.6*20px</p>
+<h3 id="可以简写"><a href="#可以简写" class="headerlink" title="可以简写"></a><strong>可以简写</strong></h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">font</span>: style weight size/height family</span><br></pre></td></tr></table></figure>
+
+<p><img src="/.io//image-20220116170434856.png" alt="image-20220116170434856"></p>
+<h3 id="text-align对齐方式"><a href="#text-align对齐方式" class="headerlink" title="text-align对齐方式"></a>text-align对齐方式</h3><p><img src="/.io//image-20220116170558455.png" alt="image-20220116170558455"></p>
+<p>justify只在除了最后一行外生效。</p>
+<h3 id="spacing字间距"><a href="#spacing字间距" class="headerlink" title="spacing字间距"></a>spacing字间距</h3><p><img src="/.io//image-20220116170716468.png" alt="image-20220116170716468"></p>
+<h3 id="text-indent缩进"><a href="#text-indent缩进" class="headerlink" title="text-indent缩进"></a>text-indent缩进</h3><h3 id="text-decoration文字修饰"><a href="#text-decoration文字修饰" class="headerlink" title="text-decoration文字修饰"></a>text-decoration文字修饰</h3><p><img src="/.io//image-20220116170829982.png" alt="image-20220116170829982"></p>
+<h3 id="white-space"><a href="#white-space" class="headerlink" title="white-space"></a>white-space</h3><p><strong>对于文本是否换行或者空格是否保留。</strong></p>
+<ul>
+<li>normal 默认多个空格合并 且不保留换行</li>
+<li>nowrap 永远不换行 合并空格</li>
+<li>pre 把空格换行都保留</li>
+<li>pre-wrap  如果一行内显示不下,就换行</li>
+<li>pre line 合并空格 保留换行</li>
+</ul>
+<h2 id="调试CSS"><a href="#调试CSS" class="headerlink" title="调试CSS"></a>调试CSS</h2><p><img src="/.io//image-20220116180213351.png" alt="image-20220116180213351"></p>
+<h2 id="补充和注意"><a href="#补充和注意" class="headerlink" title="补充和注意"></a>补充和注意</h2><h3 id="css配合点积"><a href="#css配合点积" class="headerlink" title="css配合点积"></a>css配合点积</h3><h3 id="jQuery-与-css的配合，jQuery用的不多"><a href="#jQuery-与-css的配合，jQuery用的不多" class="headerlink" title="jQuery 与 css的配合，jQuery用的不多"></a>jQuery 与 css的配合，jQuery用的不多</h3><h3 id="em是相对于父级的fontsize，rem是相对于根级，移动端适用时利用rem"><a href="#em是相对于父级的fontsize，rem是相对于根级，移动端适用时利用rem" class="headerlink" title="em是相对于父级的fontsize，rem是相对于根级，移动端适用时利用rem"></a>em是相对于父级的fontsize，rem是相对于根级，移动端适用时利用rem</h3>
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag"><i class="fa fa-tag"></i> 前端</a>
+              <a href="/tags/css/" rel="tag"><i class="fa fa-tag"></i> css</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/01/16/%E5%AD%A6%E6%A0%A1%E5%8F%88%E5%8F%91%E7%89%A9%E8%B5%84%E4%BA%86/" rel="prev" title="学校又发物资了">
+      <i class="fa fa-chevron-left"></i> 学校又发物资了
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2022/01/17/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E4%B9%8BCSS-%E4%B8%8B/" rel="next" title="前端基础之CSS---下">
+      前端基础之CSS---下 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A0%BC%E5%BC%8F"><span class="nav-number">1.</span> <span class="nav-text">格式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS%E6%98%AF%E4%B8%80%E5%A0%86%E4%BB%80%E4%B9%88%E4%B8%9C%E8%A5%BF%E5%91%A2%EF%BC%9F"><span class="nav-number">1.1.</span> <span class="nav-text">CSS是一堆什么东西呢？</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9C%A8html%E9%A1%B5%E9%9D%A2%E4%B8%AD%E4%BD%BF%E7%94%A8"><span class="nav-number">2.</span> <span class="nav-text">在html页面中使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%96%E9%93%BE-%E4%B8%80%E8%88%AC%E4%BD%BF%E7%94%A8"><span class="nav-number">2.1.</span> <span class="nav-text">外链(一般使用)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B5%8C%E5%85%A5"><span class="nav-number">2.2.</span> <span class="nav-text">嵌入</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%86%85%E8%81%94-%E4%B8%8D%E6%8E%A8%E8%8D%90"><span class="nav-number">2.3.</span> <span class="nav-text">内联(不推荐)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS%E6%98%AF%E5%A6%82%E4%BD%95%E5%B7%A5%E4%BD%9C%E7%9A%84"><span class="nav-number">3.</span> <span class="nav-text">CSS是如何工作的</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%89%E6%8B%A9%E5%99%A8"><span class="nav-number">4.</span> <span class="nav-text">选择器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%80%9A%E9%85%8D%E9%80%89%E6%8B%A9%E5%99%A8"><span class="nav-number">4.1.</span> <span class="nav-text">通配选择器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A0%87%E7%AD%BE%E9%80%89%E6%8B%A9%E5%99%A8"><span class="nav-number">4.2.</span> <span class="nav-text">标签选择器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#id%E9%80%89%E6%8B%A9%E5%99%A8"><span class="nav-number">4.3.</span> <span class="nav-text">id选择器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B1%BB%E9%80%89%E6%8B%A9%E5%99%A8"><span class="nav-number">4.4.</span> <span class="nav-text">类选择器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B1%9E%E6%80%A7%E9%80%89%E6%8B%A9%E5%99%A8"><span class="nav-number">4.5.</span> <span class="nav-text">属性选择器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BC%AA%E7%B1%BB"><span class="nav-number">4.6.</span> <span class="nav-text">伪类</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%8A%B6%E6%80%81%E4%BC%AA%E7%B1%BB"><span class="nav-number">4.6.1.</span> <span class="nav-text">状态伪类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BB%93%E6%9E%84%E4%BC%AA%E7%B1%BB"><span class="nav-number">4.6.2.</span> <span class="nav-text">结构伪类</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%84%E5%90%88"><span class="nav-number">5.</span> <span class="nav-text">组合</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%89%E6%8B%A9%E5%99%A8%E7%BB%84"><span class="nav-number">6.</span> <span class="nav-text">选择器组</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%BE%E7%BD%AE%E6%96%87%E5%AD%97%E7%9A%84%E6%A0%B7%E5%BC%8F"><span class="nav-number">7.</span> <span class="nav-text">设置文字的样式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A2%9C%E8%89%B2-RGB"><span class="nav-number">7.1.</span> <span class="nav-text">颜色 - RGB</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A2%9C%E8%89%B2-HSL"><span class="nav-number">7.2.</span> <span class="nav-text">颜色 - HSL</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A2%9C%E8%89%B2%E4%B9%9F%E5%8F%AF%E4%BB%A5%E7%9B%B4%E6%8E%A5%E4%BD%BF%E7%94%A8%E5%85%B3%E9%94%AE%E5%AD%97"><span class="nav-number">7.3.</span> <span class="nav-text">颜色也可以直接使用关键字</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#alpha%E9%80%8F%E6%98%8E%E5%BA%A6"><span class="nav-number">7.4.</span> <span class="nav-text">alpha透明度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AD%97%E4%BD%93-font-family"><span class="nav-number">7.5.</span> <span class="nav-text">字体 font-family</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#WebFonts"><span class="nav-number">7.6.</span> <span class="nav-text">WebFonts</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#font-size"><span class="nav-number">7.7.</span> <span class="nav-text">font-size</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AD%97%E7%9A%84%E7%B2%97%E7%BB%86"><span class="nav-number">7.8.</span> <span class="nav-text">字的粗细</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#line-hight%E8%A1%8C%E5%AE%BD"><span class="nav-number">7.9.</span> <span class="nav-text">line hight行宽</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%AF%E4%BB%A5%E7%AE%80%E5%86%99"><span class="nav-number">7.10.</span> <span class="nav-text">可以简写</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#text-align%E5%AF%B9%E9%BD%90%E6%96%B9%E5%BC%8F"><span class="nav-number">7.11.</span> <span class="nav-text">text-align对齐方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#spacing%E5%AD%97%E9%97%B4%E8%B7%9D"><span class="nav-number">7.12.</span> <span class="nav-text">spacing字间距</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#text-indent%E7%BC%A9%E8%BF%9B"><span class="nav-number">7.13.</span> <span class="nav-text">text-indent缩进</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#text-decoration%E6%96%87%E5%AD%97%E4%BF%AE%E9%A5%B0"><span class="nav-number">7.14.</span> <span class="nav-text">text-decoration文字修饰</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#white-space"><span class="nav-number">7.15.</span> <span class="nav-text">white-space</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B0%83%E8%AF%95CSS"><span class="nav-number">8.</span> <span class="nav-text">调试CSS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A1%A5%E5%85%85%E5%92%8C%E6%B3%A8%E6%84%8F"><span class="nav-number">9.</span> <span class="nav-text">补充和注意</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#css%E9%85%8D%E5%90%88%E7%82%B9%E7%A7%AF"><span class="nav-number">9.1.</span> <span class="nav-text">css配合点积</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#jQuery-%E4%B8%8E-css%E7%9A%84%E9%85%8D%E5%90%88%EF%BC%8CjQuery%E7%94%A8%E7%9A%84%E4%B8%8D%E5%A4%9A"><span class="nav-number">9.2.</span> <span class="nav-text">jQuery 与 css的配合，jQuery用的不多</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#em%E6%98%AF%E7%9B%B8%E5%AF%B9%E4%BA%8E%E7%88%B6%E7%BA%A7%E7%9A%84fontsize%EF%BC%8Crem%E6%98%AF%E7%9B%B8%E5%AF%B9%E4%BA%8E%E6%A0%B9%E7%BA%A7%EF%BC%8C%E7%A7%BB%E5%8A%A8%E7%AB%AF%E9%80%82%E7%94%A8%E6%97%B6%E5%88%A9%E7%94%A8rem"><span class="nav-number">9.3.</span> <span class="nav-text">em是相对于父级的fontsize，rem是相对于根级，移动端适用时利用rem</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="ShallowLine"
+      src="/images/haocun.jpg">
+  <p class="site-author-name" itemprop="name">ShallowLine</p>
+  <div class="site-description" itemprop="description">Blog of a Programmer</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives">
+        
+          <span class="site-state-item-count">17</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories">
+          
+        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">23</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/hijack8" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;hijack8" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:1286285985@qq.com" title="E-Mail → mailto:1286285985@qq.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ShallowLine</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
+  </div><script color="0,0,255" opacity="0.5" zIndex="-1" count="99" src="https://cdn.jsdelivr.net/npm/canvas-nest.js@1/dist/canvas-nest.js"></script>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib1/anime.min.js"></script>
+  <script src="/lib1/velocity/velocity.min.js"></script>
+  <script src="/lib1/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
