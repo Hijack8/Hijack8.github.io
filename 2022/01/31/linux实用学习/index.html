@@ -20,17 +20,17 @@
     var CONFIG = {"hostname":"hijack8.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.json"};
   </script>
 
-  <meta name="description" content="linux文件类型1 普通文件例如txt文件等。 利用ls -lh命令查看文件属性，发现对应属性为 - 2 目录文件属性为d 3 设备文件块设备文件属性为b 例如dev文件夹下的sda文件，表示SCSI硬盘，hda表示IDE硬盘。  字符设备文件属性为c 例如dev下的null文件，任何送入这个设备的内容都会被忽略。  4 管道文件属性为p 也叫作FIFO文件。 5 链接文件硬链接文件硬链接文件是">
+  <meta name="description" content="linux文件类型1 普通文件例如txt文件等。 利用ls -lh命令查看文件属性，发现对应属性为 - 2 目录文件属性为d">
 <meta property="og:type" content="article">
 <meta property="og:title" content="linux实用学习">
 <meta property="og:url" content="http://hijack8.github.io/2022/01/31/linux%E5%AE%9E%E7%94%A8%E5%AD%A6%E4%B9%A0/index.html">
 <meta property="og:site_name" content="ShallowLine&#39;sBlog">
-<meta property="og:description" content="linux文件类型1 普通文件例如txt文件等。 利用ls -lh命令查看文件属性，发现对应属性为 - 2 目录文件属性为d 3 设备文件块设备文件属性为b 例如dev文件夹下的sda文件，表示SCSI硬盘，hda表示IDE硬盘。  字符设备文件属性为c 例如dev下的null文件，任何送入这个设备的内容都会被忽略。  4 管道文件属性为p 也叫作FIFO文件。 5 链接文件硬链接文件硬链接文件是">
+<meta property="og:description" content="linux文件类型1 普通文件例如txt文件等。 利用ls -lh命令查看文件属性，发现对应属性为 - 2 目录文件属性为d">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://hijack8.github.io/2022/01/31/linux%E5%AE%9E%E7%94%A8%E5%AD%A6%E4%B9%A0/image-20220131175420142.png">
 <meta property="og:image" content="https://gitee.com/Hijack8/tc/raw/master/img2/image-20220131175327512.png">
 <meta property="article:published_time" content="2022-01-31T09:48:02.000Z">
-<meta property="article:modified_time" content="2022-01-31T10:07:46.403Z">
+<meta property="article:modified_time" content="2022-01-31T11:10:36.185Z">
 <meta property="article:author" content="ShallowLine">
 <meta property="article:tag" content="linux">
 <meta name="twitter:card" content="summary">
@@ -222,7 +222,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2022-01-31 17:48:02 / Modified: 18:07:46" itemprop="dateCreated datePublished" datetime="2022-01-31T17:48:02+08:00">2022-01-31</time>
+              <time title="Created: 2022-01-31 17:48:02 / Modified: 19:10:36" itemprop="dateCreated datePublished" datetime="2022-01-31T17:48:02+08:00">2022-01-31</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -248,6 +248,8 @@
         <h2 id="linux文件类型"><a href="#linux文件类型" class="headerlink" title="linux文件类型"></a>linux文件类型</h2><h3 id="1-普通文件"><a href="#1-普通文件" class="headerlink" title="1 普通文件"></a>1 普通文件</h3><p>例如txt文件等。</p>
 <p>利用<code>ls -lh</code>命令查看文件属性，发现对应属性为 <strong>-</strong></p>
 <h3 id="2-目录文件"><a href="#2-目录文件" class="headerlink" title="2 目录文件"></a>2 目录文件</h3><p>属性为<strong>d</strong></p>
+<span id="more"></span>
+
 <h3 id="3-设备文件"><a href="#3-设备文件" class="headerlink" title="3 设备文件"></a>3 设备文件</h3><h4 id="块设备文件"><a href="#块设备文件" class="headerlink" title="块设备文件"></a>块设备文件</h4><p>属性为<strong>b</strong></p>
 <p>例如dev文件夹下的sda文件，表示SCSI硬盘，hda表示IDE硬盘。</p>
 <p><img src="/2022/01/31/linux%E5%AE%9E%E7%94%A8%E5%AD%A6%E4%B9%A0/image-20220131175420142.png" alt="image-20220131175420142"></p>
@@ -259,6 +261,11 @@
 <h3 id="5-链接文件"><a href="#5-链接文件" class="headerlink" title="5 链接文件"></a>5 链接文件</h3><h4 id="硬链接文件"><a href="#硬链接文件" class="headerlink" title="硬链接文件"></a>硬链接文件</h4><p>硬链接文件是已存在文件的另一个文件，对硬链接文件进行操作时，结果和软链接相同，如果删除硬链接文件的源文件，硬链接文件仍然存在，而且保留了原有的内容。</p>
 <h4 id="软链接文件"><a href="#软链接文件" class="headerlink" title="软链接文件"></a>软链接文件</h4><p>又叫符号链接文件，类似快捷方式，对这个文件进行操作时，系统会自动转换为对源文件的操作。删除此文件不会删除源文件本身。</p>
 <p>属性为l   -&gt;  link</p>
+<h2 id="链接文件-—-共享文件"><a href="#链接文件-—-共享文件" class="headerlink" title="链接文件 — 共享文件"></a>链接文件 — 共享文件</h2><p>分为硬链接和软链接</p>
+<h3 id="硬链接"><a href="#硬链接" class="headerlink" title="硬链接"></a>硬链接</h3><p>不会重新分配inode，公用inode。</p>
+<p>不能给目录硬链接。</p>
+<p>只能在同一个文件系统下建立。</p>
+<h3 id="软链接"><a href="#软链接" class="headerlink" title="软链接"></a>软链接</h3><p>包含了另一个文件的路径名，可以是任意文件或目录，可以链接不同文件系统的文件，和Windows下的快捷方式类似。</p>
 
     </div>
 
@@ -340,7 +347,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#linux%E6%96%87%E4%BB%B6%E7%B1%BB%E5%9E%8B"><span class="nav-number">1.</span> <span class="nav-text">linux文件类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E6%99%AE%E9%80%9A%E6%96%87%E4%BB%B6"><span class="nav-number">1.1.</span> <span class="nav-text">1 普通文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E7%9B%AE%E5%BD%95%E6%96%87%E4%BB%B6"><span class="nav-number">1.2.</span> <span class="nav-text">2 目录文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E8%AE%BE%E5%A4%87%E6%96%87%E4%BB%B6"><span class="nav-number">1.3.</span> <span class="nav-text">3 设备文件</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9D%97%E8%AE%BE%E5%A4%87%E6%96%87%E4%BB%B6"><span class="nav-number">1.3.1.</span> <span class="nav-text">块设备文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E8%AE%BE%E5%A4%87%E6%96%87%E4%BB%B6"><span class="nav-number">1.3.2.</span> <span class="nav-text">字符设备文件</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-%E7%AE%A1%E9%81%93%E6%96%87%E4%BB%B6"><span class="nav-number">1.4.</span> <span class="nav-text">4 管道文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-%E9%93%BE%E6%8E%A5%E6%96%87%E4%BB%B6"><span class="nav-number">1.5.</span> <span class="nav-text">5 链接文件</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%A1%AC%E9%93%BE%E6%8E%A5%E6%96%87%E4%BB%B6"><span class="nav-number">1.5.1.</span> <span class="nav-text">硬链接文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BD%AF%E9%93%BE%E6%8E%A5%E6%96%87%E4%BB%B6"><span class="nav-number">1.5.2.</span> <span class="nav-text">软链接文件</span></a></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#linux%E6%96%87%E4%BB%B6%E7%B1%BB%E5%9E%8B"><span class="nav-number">1.</span> <span class="nav-text">linux文件类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E6%99%AE%E9%80%9A%E6%96%87%E4%BB%B6"><span class="nav-number">1.1.</span> <span class="nav-text">1 普通文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E7%9B%AE%E5%BD%95%E6%96%87%E4%BB%B6"><span class="nav-number">1.2.</span> <span class="nav-text">2 目录文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E8%AE%BE%E5%A4%87%E6%96%87%E4%BB%B6"><span class="nav-number">1.3.</span> <span class="nav-text">3 设备文件</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9D%97%E8%AE%BE%E5%A4%87%E6%96%87%E4%BB%B6"><span class="nav-number">1.3.1.</span> <span class="nav-text">块设备文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E8%AE%BE%E5%A4%87%E6%96%87%E4%BB%B6"><span class="nav-number">1.3.2.</span> <span class="nav-text">字符设备文件</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-%E7%AE%A1%E9%81%93%E6%96%87%E4%BB%B6"><span class="nav-number">1.4.</span> <span class="nav-text">4 管道文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-%E9%93%BE%E6%8E%A5%E6%96%87%E4%BB%B6"><span class="nav-number">1.5.</span> <span class="nav-text">5 链接文件</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%A1%AC%E9%93%BE%E6%8E%A5%E6%96%87%E4%BB%B6"><span class="nav-number">1.5.1.</span> <span class="nav-text">硬链接文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BD%AF%E9%93%BE%E6%8E%A5%E6%96%87%E4%BB%B6"><span class="nav-number">1.5.2.</span> <span class="nav-text">软链接文件</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%93%BE%E6%8E%A5%E6%96%87%E4%BB%B6-%E2%80%94-%E5%85%B1%E4%BA%AB%E6%96%87%E4%BB%B6"><span class="nav-number">2.</span> <span class="nav-text">链接文件 — 共享文件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A1%AC%E9%93%BE%E6%8E%A5"><span class="nav-number">2.1.</span> <span class="nav-text">硬链接</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BD%AF%E9%93%BE%E6%8E%A5"><span class="nav-number">2.2.</span> <span class="nav-text">软链接</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
