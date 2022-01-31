@@ -124,17 +124,17 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">24</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">31</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">12</span></a>
+    <a href="/categories" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">16</span></a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">20</span></a>
+    <a href="/archives" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">26</span></a>
 
   </li>
       <li class="menu-item menu-item-search">
@@ -187,6 +187,504 @@
 
           <div class="content index posts-expand">
             
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://hijack8.github.io/2022/01/31/linux%E5%AE%9E%E7%94%A8%E5%AD%A6%E4%B9%A0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/haocun.jpg">
+      <meta itemprop="name" content="ShallowLine">
+      <meta itemprop="description" content="Blog of a Programmer">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ShallowLine'sBlog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/01/31/linux%E5%AE%9E%E7%94%A8%E5%AD%A6%E4%B9%A0/" class="post-title-link" itemprop="url">linux实用学习</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2022-01-31 17:48:02 / Modified: 18:07:46" itemprop="dateCreated datePublished" datetime="2022-01-31T17:48:02+08:00">2022-01-31</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/linux/" itemprop="url" rel="index"><span itemprop="name">linux</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="linux文件类型"><a href="#linux文件类型" class="headerlink" title="linux文件类型"></a>linux文件类型</h2><h3 id="1-普通文件"><a href="#1-普通文件" class="headerlink" title="1 普通文件"></a>1 普通文件</h3><p>例如txt文件等。</p>
+<p>利用<code>ls -lh</code>命令查看文件属性，发现对应属性为 <strong>-</strong></p>
+<h3 id="2-目录文件"><a href="#2-目录文件" class="headerlink" title="2 目录文件"></a>2 目录文件</h3><p>属性为<strong>d</strong></p>
+<h3 id="3-设备文件"><a href="#3-设备文件" class="headerlink" title="3 设备文件"></a>3 设备文件</h3><h4 id="块设备文件"><a href="#块设备文件" class="headerlink" title="块设备文件"></a>块设备文件</h4><p>属性为<strong>b</strong></p>
+<p>例如dev文件夹下的sda文件，表示SCSI硬盘，hda表示IDE硬盘。</p>
+<p><img src="/2022/01/31/linux%E5%AE%9E%E7%94%A8%E5%AD%A6%E4%B9%A0/image-20220131175420142.png" alt="image-20220131175420142"></p>
+<h4 id="字符设备文件"><a href="#字符设备文件" class="headerlink" title="字符设备文件"></a>字符设备文件</h4><p>属性为<strong>c</strong></p>
+<p>例如dev下的null文件，任何送入这个设备的内容都会被忽略。</p>
+<p><img src="https://gitee.com/Hijack8/tc/raw/master/img2/image-20220131175327512.png" alt="image-20220131175327512"></p>
+<h3 id="4-管道文件"><a href="#4-管道文件" class="headerlink" title="4 管道文件"></a>4 管道文件</h3><p>属性为p</p>
+<p>也叫作FIFO文件。</p>
+<h3 id="5-链接文件"><a href="#5-链接文件" class="headerlink" title="5 链接文件"></a>5 链接文件</h3><h4 id="硬链接文件"><a href="#硬链接文件" class="headerlink" title="硬链接文件"></a>硬链接文件</h4><p>硬链接文件是已存在文件的另一个文件，对硬链接文件进行操作时，结果和软链接相同，如果删除硬链接文件的源文件，硬链接文件仍然存在，而且保留了原有的内容。</p>
+<h4 id="软链接文件"><a href="#软链接文件" class="headerlink" title="软链接文件"></a>软链接文件</h4><p>又叫符号链接文件，类似快捷方式，对这个文件进行操作时，系统会自动转换为对源文件的操作。删除此文件不会删除源文件本身。</p>
+<p>属性为l   -&gt;  link</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://hijack8.github.io/2022/01/31/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3git-branch/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/haocun.jpg">
+      <meta itemprop="name" content="ShallowLine">
+      <meta itemprop="description" content="Blog of a Programmer">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ShallowLine'sBlog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/01/31/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3git-branch/" class="post-title-link" itemprop="url">深入理解git--branch</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2022-01-31 14:29:50 / Modified: 17:39:07" itemprop="dateCreated datePublished" datetime="2022-01-31T14:29:50+08:00">2022-01-31</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/git/" itemprop="url" rel="index"><span itemprop="name">git</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>对git branch进行实验从而深入理解。</p>
+<h2 id="git-checkout-b-lt-branch-name-gt-新建分支"><a href="#git-checkout-b-lt-branch-name-gt-新建分支" class="headerlink" title="git checkout -b &lt;branch_name&gt;新建分支"></a><code>git checkout -b &lt;branch_name&gt;</code>新建分支</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout -b branch_test1</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://gitee.com/Hijack8/tc/raw/master/img/image-20220131143345502.png" alt="image-20220131143345502"></p>
+<p>可以看到我们的分支变为了branch_test1分支。</p>
+<h2 id="git-checkout-master切换为主分支"><a href="#git-checkout-master切换为主分支" class="headerlink" title="git checkout master切换为主分支"></a><code>git checkout master</code>切换为主分支</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout master</span><br></pre></td></tr></table></figure>
+
+<p>切换某个分支。</p>
+<h2 id="git-branch-d-lt-branch-name-gt-将分支删除"><a href="#git-branch-d-lt-branch-name-gt-将分支删除" class="headerlink" title="git branch -d &lt;branch_name&gt;将分支删除"></a><code>git branch -d &lt;branch_name&gt;</code>将分支删除</h2><p><img src="https://gitee.com/Hijack8/tc/raw/master/img/image-20220131143648498.png" alt="image-20220131143648498"></p>
+<h2 id="git-branch-查看分支"><a href="#git-branch-查看分支" class="headerlink" title="git branch 查看分支"></a><code>git branch </code>查看分支</h2><p><img src="https://gitee.com/Hijack8/tc/raw/master/img/image-20220131143826860.png" alt="image-20220131143826860"></p>
+<h2 id="git-merge-lt-branch-name-gt-将任何分支合并到主分支中去"><a href="#git-merge-lt-branch-name-gt-将任何分支合并到主分支中去" class="headerlink" title="git merge &lt;branch_name&gt;将任何分支合并到主分支中去"></a><code>git merge &lt;branch_name&gt;</code>将任何分支合并到主分支中去</h2><h2 id="然后我们进行实际实验。。。。"><a href="#然后我们进行实际实验。。。。" class="headerlink" title="然后我们进行实际实验。。。。"></a>然后我们进行实际实验。。。。</h2><p>在另一台主机中对master分支进行修改，对test1.md文件添加内容，然后push上去，注意这里的<strong>两个主机必须都是这个项目的开发者或者是拥有者才有权限进行push操作。</strong></p>
+<p><img src="https://gitee.com/Hijack8/tc/raw/master/img2/image-20220131144944427.png" alt="image-20220131144944427"></p>
+<p>这样成功push后可以在远端发现变化。</p>
+<p><img src="https://gitee.com/Hijack8/tc/raw/master/img2/image-20220131145049374.png" alt="image-20220131145049374"></p>
+<p>我们新建一个分支，并转入这个分支。</p>
+<p><img src="https://gitee.com/Hijack8/tc/raw/master/img2/image-20220131145644710.png" alt="image-20220131145644710"></p>
+<p>然后对这个分支进行修改操作。删除test2</p>
+<p><img src="https://gitee.com/Hijack8/tc/raw/master/img2/image-20220131145747933.png" alt="image-20220131145747933"></p>
+<p>然后切换为主分支查看：</p>
+<p><img src="https://gitee.com/Hijack8/tc/raw/master/img2/image-20220131145958268.png" alt="image-20220131145958268"></p>
+<p>发现很不幸，主分支上的文件也被删除了。这是因为没有进行正常的add commit操作。</p>
+<p>我们重新回到branch_a分支，进行删除文件操作。</p>
+<p><img src="https://gitee.com/Hijack8/tc/raw/master/img2/image-20220131150203460.png" alt="image-20220131150203460"></p>
+<p>这时git进行了两次提交，我们回到master分支。</p>
+<p><img src="https://gitee.com/Hijack8/tc/raw/master/img2/image-20220131150256035.png" alt="image-20220131150256035"></p>
+<p>发现master分支内的文件并没有被删除，而是仅仅branch_a分支中的文件被删除了两个。</p>
+<p>进一步我们进行git merge操作</p>
+<p><img src="https://gitee.com/Hijack8/tc/raw/master/img2/image-20220131150642575.png" alt="image-20220131150642575"></p>
+<p>发现成功将branch_a分支中的改动合并到主分支中去。</p>
+<p>删除分支git checkout -d</p>
+<p><img src="https://gitee.com/Hijack8/tc/raw/master/img2/image-20220131150805068.png" alt="image-20220131150805068"></p>
+<p>这就是分支在本地的操作，<strong>如果我们不把分支push到远端，这个新建的branch_a分支就只有天知地知你知我知</strong>。</p>
+<h2 id="合并冲突"><a href="#合并冲突" class="headerlink" title="合并冲突"></a>合并冲突</h2><p>经常会有合并冲突的问题。</p>
+<p>例如，在branch_a中改了test1，在master中也改了test1，就会冲突。</p>
+<p>我们尝试一下。</p>
+<p><img src="https://gitee.com/Hijack8/tc/raw/master/img2/image-20220131151609812.png" alt="image-20220131151609812"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git diff</span><br><span class="line">git add .</span><br><span class="line">git commit -m &quot;conflict&quot;</span><br><span class="line">git merge branch_b</span><br></pre></td></tr></table></figure>
+
+<p>利用git diff 显示差异内容，然后add commit提交，然后merge合并即可。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://hijack8.github.io/2022/01/31/git-push%E9%97%AE%E9%A2%98/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/haocun.jpg">
+      <meta itemprop="name" content="ShallowLine">
+      <meta itemprop="description" content="Blog of a Programmer">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ShallowLine'sBlog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/01/31/git-push%E9%97%AE%E9%A2%98/" class="post-title-link" itemprop="url">git_push问题</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2022-01-31 12:02:24 / Modified: 12:12:25" itemprop="dateCreated datePublished" datetime="2022-01-31T12:02:24+08:00">2022-01-31</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/bugs/" itemprop="url" rel="index"><span itemprop="name">bugs</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><img src="https://gitee.com/Hijack8/tc/raw/master/img/image-20220131120246514.png" alt="image-20220131120246514"></p>
+<p>输入</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global http.sslVerify &quot;false&quot;</span><br></pre></td></tr></table></figure>
+
+<p>可以解决。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://hijack8.github.io/2022/01/31/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3git%E5%92%8Cgithub%E6%88%96gitee/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/haocun.jpg">
+      <meta itemprop="name" content="ShallowLine">
+      <meta itemprop="description" content="Blog of a Programmer">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ShallowLine'sBlog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/01/31/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3git%E5%92%8Cgithub%E6%88%96gitee/" class="post-title-link" itemprop="url">深入理解git和github或gitee</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2022-01-31 11:41:06 / Modified: 12:05:30" itemprop="dateCreated datePublished" datetime="2022-01-31T11:41:06+08:00">2022-01-31</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/git/" itemprop="url" rel="index"><span itemprop="name">git</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>深入理解Git和Github以及Gitee</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2022/01/31/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3git%E5%92%8Cgithub%E6%88%96gitee/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://hijack8.github.io/2022/01/30/%E6%89%BE%E4%B8%8D%E5%88%B0gpedit-msc%E6%80%8E%E4%B9%88%E5%8A%9E/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/haocun.jpg">
+      <meta itemprop="name" content="ShallowLine">
+      <meta itemprop="description" content="Blog of a Programmer">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ShallowLine'sBlog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/01/30/%E6%89%BE%E4%B8%8D%E5%88%B0gpedit-msc%E6%80%8E%E4%B9%88%E5%8A%9E/" class="post-title-link" itemprop="url">找不到gpedit.msc怎么办</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2022-01-30 22:39:49" itemprop="dateCreated datePublished" datetime="2022-01-30T22:39:49+08:00">2022-01-30</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-01-31 12:05:30" itemprop="dateModified" datetime="2022-01-31T12:05:30+08:00">2022-01-31</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/skills/" itemprop="url" rel="index"><span itemprop="name">skills</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>如果cmd中找不到gpedit.msc</p>
+<p>新建一个文本文档输入</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line"><span class="built_in">pushd</span> <span class="string">&quot;%~dp0&quot;</span></span><br><span class="line">dir /b C:\Windows\servicing\Packages\Microsoft-Windows-GroupPolicy-ClientExtensions-Package~3*.mum &gt;List.txt</span><br><span class="line">dir /b C:\Windows\servicing\Packages\Microsoft-Windows-GroupPolicy-ClientTools-Package~3*.mum &gt;&gt;List.txt</span><br><span class="line"><span class="keyword">for</span> /f %%i <span class="keyword">in</span> (<span class="string">&#x27;findstr /i . List.txt 2^&gt;nul&#x27;</span>) <span class="keyword">do</span> dism /online /norestart /add-package:<span class="string">&quot;C:\Windows\servicing\Packages\%%i&quot;</span></span><br><span class="line">pause</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2022/01/30/%E6%89%BE%E4%B8%8D%E5%88%B0gpedit-msc%E6%80%8E%E4%B9%88%E5%8A%9E/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://hijack8.github.io/2022/01/30/Typora%E5%86%99Markdown%E6%96%87%E4%BB%B6%E5%88%A9%E7%94%A8%E5%9B%BE%E5%BA%8A/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/haocun.jpg">
+      <meta itemprop="name" content="ShallowLine">
+      <meta itemprop="description" content="Blog of a Programmer">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ShallowLine'sBlog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/01/30/Typora%E5%86%99Markdown%E6%96%87%E4%BB%B6%E5%88%A9%E7%94%A8%E5%9B%BE%E5%BA%8A/" class="post-title-link" itemprop="url">Typora写Markdown文件利用图床</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2022-01-30 21:02:49" itemprop="dateCreated datePublished" datetime="2022-01-30T21:02:49+08:00">2022-01-30</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-01-31 12:05:30" itemprop="dateModified" datetime="2022-01-31T12:05:30+08:00">2022-01-31</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Typora/" itemprop="url" rel="index"><span itemprop="name">Typora</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>本文用来探索一个免费的图床来实现Typora笔记中图片的上传。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2022/01/30/Typora%E5%86%99Markdown%E6%96%87%E4%BB%B6%E5%88%A9%E7%94%A8%E5%9B%BE%E5%BA%8A/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
       
   
   
@@ -482,512 +980,10 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://hijack8.github.io/2022/01/24/win11%E5%8F%B3%E9%94%AE%E8%8F%9C%E5%8D%95%E6%A0%8F%E5%8F%98%E5%9B%9Ewin0/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/haocun.jpg">
-      <meta itemprop="name" content="ShallowLine">
-      <meta itemprop="description" content="Blog of a Programmer">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="ShallowLine'sBlog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/01/24/win11%E5%8F%B3%E9%94%AE%E8%8F%9C%E5%8D%95%E6%A0%8F%E5%8F%98%E5%9B%9Ewin0/" class="post-title-link" itemprop="url">win11右键菜单栏变回win0</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2022-01-24 21:45:45" itemprop="dateCreated datePublished" datetime="2022-01-24T21:45:45+08:00">2022-01-24</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-01-25 10:07:41" itemprop="dateModified" datetime="2022-01-25T10:07:41+08:00">2022-01-25</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E9%9A%8F%E7%AC%94/" itemprop="url" rel="index"><span itemprop="name">随笔</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>win11右键菜单栏变为win10版本的方法。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2022/01/24/win11%E5%8F%B3%E9%94%AE%E8%8F%9C%E5%8D%95%E6%A0%8F%E5%8F%98%E5%9B%9Ewin0/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://hijack8.github.io/2022/01/23/%E9%A1%BA%E5%88%A9%E5%9B%9E%E5%AE%B6/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/haocun.jpg">
-      <meta itemprop="name" content="ShallowLine">
-      <meta itemprop="description" content="Blog of a Programmer">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="ShallowLine'sBlog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/01/23/%E9%A1%BA%E5%88%A9%E5%9B%9E%E5%AE%B6/" class="post-title-link" itemprop="url">顺利回家</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2022-01-23 19:50:03" itemprop="dateCreated datePublished" datetime="2022-01-23T19:50:03+08:00">2022-01-23</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-01-25 10:07:41" itemprop="dateModified" datetime="2022-01-25T10:07:41+08:00">2022-01-25</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/life/" itemprop="url" rel="index"><span itemprop="name">life</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>这不就顺利回家了吗。。。。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2022/01/23/%E9%A1%BA%E5%88%A9%E5%9B%9E%E5%AE%B6/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://hijack8.github.io/2022/01/19/%E5%89%8D%E7%AB%AF%E8%B0%83%E8%AF%95/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/haocun.jpg">
-      <meta itemprop="name" content="ShallowLine">
-      <meta itemprop="description" content="Blog of a Programmer">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="ShallowLine'sBlog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/01/19/%E5%89%8D%E7%AB%AF%E8%B0%83%E8%AF%95/" class="post-title-link" itemprop="url">前端调试</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2022-01-19 11:21:12" itemprop="dateCreated datePublished" datetime="2022-01-19T11:21:12+08:00">2022-01-19</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-01-25 10:07:41" itemprop="dateModified" datetime="2022-01-25T10:07:41+08:00">2022-01-25</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%89%8D%E7%AB%AF/" itemprop="url" rel="index"><span itemprop="name">前端</span></a>
-                </span>
-                  , 
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%89%8D%E7%AB%AF/%E8%B0%83%E8%AF%95/" itemprop="url" rel="index"><span itemprop="name">调试</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>前端开发中会有各种各样的问题，也就是bug，如何进行调试？</p>
-<p><img src="/2022/01/19/%E5%89%8D%E7%AB%AF%E8%B0%83%E8%AF%95/image-20220119093045860.png" alt="image-20220119093045860"></p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2022/01/19/%E5%89%8D%E7%AB%AF%E8%B0%83%E8%AF%95/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://hijack8.github.io/2022/01/19/plan-21-1-19/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/haocun.jpg">
-      <meta itemprop="name" content="ShallowLine">
-      <meta itemprop="description" content="Blog of a Programmer">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="ShallowLine'sBlog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/01/19/plan-21-1-19/" class="post-title-link" itemprop="url">plan_21_1_19</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2022-01-19 00:39:12" itemprop="dateCreated datePublished" datetime="2022-01-19T00:39:12+08:00">2022-01-19</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-01-25 10:07:41" itemprop="dateModified" datetime="2022-01-25T10:07:41+08:00">2022-01-25</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/future/" itemprop="url" rel="index"><span itemprop="name">future</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>这几天由于疫情提前上了下学期的一些课程，同时还在恶补前端开发的一系列知识，忙的不可开交。总是越忙的时候才会越能够感受到你自己的存在，充实的学习生活让我愈加体会到自己的不足，同时也会思考自己到底应该如何走这接下来的一年半。</p>
-<p>这里折叠一下</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2022/01/19/plan-21-1-19/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://hijack8.github.io/2022/01/19/%E7%96%AB%E6%83%85%E6%97%A5%E5%B8%B8%E4%BA%8C/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/haocun.jpg">
-      <meta itemprop="name" content="ShallowLine">
-      <meta itemprop="description" content="Blog of a Programmer">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="ShallowLine'sBlog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/01/19/%E7%96%AB%E6%83%85%E6%97%A5%E5%B8%B8%E4%BA%8C/" class="post-title-link" itemprop="url">疫情日常二</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2022-01-19 00:23:11" itemprop="dateCreated datePublished" datetime="2022-01-19T00:23:11+08:00">2022-01-19</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-01-25 10:07:41" itemprop="dateModified" datetime="2022-01-25T10:07:41+08:00">2022-01-25</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/life/" itemprop="url" rel="index"><span itemprop="name">life</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>全天在宿舍学习，编译原理数据库都上了第一节课，都挺难的，想学好还是要下大功夫。</p>
-<p>另外前端的学习也是非常困难，JavaScript是一种前所未有的非常乱的编程语言，字节跳动工程师直接给我们进行了工作层面的教学，很难跟上进度。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2022/01/19/%E7%96%AB%E6%83%85%E6%97%A5%E5%B8%B8%E4%BA%8C/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://hijack8.github.io/2022/01/18/JavaScript%E8%BF%9B%E9%98%B6-%E4%BA%8C/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/haocun.jpg">
-      <meta itemprop="name" content="ShallowLine">
-      <meta itemprop="description" content="Blog of a Programmer">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="ShallowLine'sBlog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/01/18/JavaScript%E8%BF%9B%E9%98%B6-%E4%BA%8C/" class="post-title-link" itemprop="url">JavaScript进阶---二</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2022-01-18 23:58:47" itemprop="dateCreated datePublished" datetime="2022-01-18T23:58:47+08:00">2022-01-18</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-01-25 10:07:41" itemprop="dateModified" datetime="2022-01-25T10:07:41+08:00">2022-01-25</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%89%8D%E7%AB%AF/" itemprop="url" rel="index"><span itemprop="name">前端</span></a>
-                </span>
-                  , 
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%89%8D%E7%AB%AF/JavaScript/" itemprop="url" rel="index"><span itemprop="name">JavaScript</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>让我们回归到js的实际功能上来。</p>
-<p>看一段代码：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">isUnitMatrix2d</span>(<span class="params">m</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">return</span> m[<span class="number">0</span>] === <span class="number">1</span> &amp;&amp; m[<span class="number">1</span>] === <span class="number">0</span> &amp;&amp; m[<span class="number">2</span>] === <span class="number">0</span> &amp;&amp; m[<span class="number">3</span>] === <span class="number">1</span> &amp;&amp; m[<span class="number">4</span>] === <span class="number">1</span> &amp;&amp; m[<span class="number">5</span>] === <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>这段代码好不好？</p>
-<p>这段代码是实际上在实现功能手写的，判断是不是单位矩阵，这个函数调用十分频繁，所以说我们要尽量减少计算时间，虽然说这个代码比较冗长，但是性能是最好的。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2022/01/18/JavaScript%E8%BF%9B%E9%98%B6-%E4%BA%8C/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
   </nav>
 
 
@@ -1055,20 +1051,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives">
         
-          <span class="site-state-item-count">20</span>
+          <span class="site-state-item-count">26</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories">
           
-        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-count">16</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">24</span>
+        <span class="site-state-item-count">31</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>

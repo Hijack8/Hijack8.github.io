@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib1/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"hijack8.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.json"};
+  </script>
+
+  <meta name="description" content="本文用来探索一个免费的图床来实现Typora笔记中图片的上传。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Typora写Markdown文件利用图床">
+<meta property="og:url" content="http://hijack8.github.io/2022/01/30/Typora%E5%86%99Markdown%E6%96%87%E4%BB%B6%E5%88%A9%E7%94%A8%E5%9B%BE%E5%BA%8A/index.html">
+<meta property="og:site_name" content="ShallowLine&#39;sBlog">
+<meta property="og:description" content="本文用来探索一个免费的图床来实现Typora笔记中图片的上传。">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://gitee.com/Hijack8/tc/raw/master/img/image-20220130213638585.png">
+<meta property="og:image" content="https://gitee.com/Hijack8/tc/raw/master/img/image-20220130213812075.png">
+<meta property="og:image" content="https://gitee.com/Hijack8/tc/raw/master/img/image-20220130213835876.png">
+<meta property="og:image" content="https://gitee.com/Hijack8/tc/raw/master/img/image-20220130213914823.png">
+<meta property="og:image" content="https://gitee.com/Hijack8/tc/raw/master/img/image-20220130213947934.png">
+<meta property="og:image" content="https://gitee.com/Hijack8/tc/raw/master/img/image-20220130214317847.png">
+<meta property="og:image" content="https://gitee.com/Hijack8/tc/raw/master/img/image-20220130214454423.png">
+<meta property="og:image" content="https://gitee.com/Hijack8/tc/raw/master/img/image-20220130214741550.png">
+<meta property="og:image" content="https://gitee.com/Hijack8/tc/raw/master/img/image-20220130214809553.png">
+<meta property="og:image" content="https://gitee.com/Hijack8/tc/raw/master/img/image-20220130214828966.png">
+<meta property="og:image" content="https://gitee.com/Hijack8/tc/raw/master/img/image-20220130214953350.png">
+<meta property="og:image" content="https://gitee.com/Hijack8/tc/raw/master/img/image-20220130215319056.png">
+<meta property="article:published_time" content="2022-01-30T13:02:49.000Z">
+<meta property="article:modified_time" content="2022-01-31T04:05:30.953Z">
+<meta property="article:author" content="ShallowLine">
+<meta property="article:tag" content="Typora">
+<meta property="article:tag" content="图床">
+<meta property="article:tag" content="Markdown">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://gitee.com/Hijack8/tc/raw/master/img/image-20220130213638585.png">
+
+<link rel="canonical" href="http://hijack8.github.io/2022/01/30/Typora%E5%86%99Markdown%E6%96%87%E4%BB%B6%E5%88%A9%E7%94%A8%E5%9B%BE%E5%BA%8A/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>Typora写Markdown文件利用图床 | ShallowLine'sBlog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">ShallowLine'sBlog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">Blog</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">31</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">16</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">26</span></a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://hijack8.github.io/2022/01/30/Typora%E5%86%99Markdown%E6%96%87%E4%BB%B6%E5%88%A9%E7%94%A8%E5%9B%BE%E5%BA%8A/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/haocun.jpg">
+      <meta itemprop="name" content="ShallowLine">
+      <meta itemprop="description" content="Blog of a Programmer">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ShallowLine'sBlog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Typora写Markdown文件利用图床
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2022-01-30 21:02:49" itemprop="dateCreated datePublished" datetime="2022-01-30T21:02:49+08:00">2022-01-30</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-01-31 12:05:30" itemprop="dateModified" datetime="2022-01-31T12:05:30+08:00">2022-01-31</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Typora/" itemprop="url" rel="index"><span itemprop="name">Typora</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>本文用来探索一个免费的图床来实现Typora笔记中图片的上传。</p>
+<span id="more"></span>
+
+<h2 id="下载picgo软件"><a href="#下载picgo软件" class="headerlink" title="下载picgo软件"></a>下载picgo软件</h2><p>注意Typora中有一个好用的直接上传图片的软件叫picgo，可以通过右键直接将typora中的文件上传。</p>
+<p><img src="https://gitee.com/Hijack8/tc/raw/master/img/image-20220130213638585.png" alt="image-20220130213638585"></p>
+<p>这里找到偏好设置中的下载PicGoAPP选项，</p>
+<p><img src="https://gitee.com/Hijack8/tc/raw/master/img/image-20220130213812075.png" alt="image-20220130213812075"></p>
+<p>点击免费下载</p>
+<p><img src="https://gitee.com/Hijack8/tc/raw/master/img/image-20220130213835876.png" alt="image-20220130213835876"></p>
+<p>选择一个稳定的版本比如2.3.0</p>
+<p><img src="https://gitee.com/Hijack8/tc/raw/master/img/image-20220130213914823.png" alt="image-20220130213914823"></p>
+<p>下载这个版本即可</p>
+<p><img src="https://gitee.com/Hijack8/tc/raw/master/img/image-20220130213947934.png" alt="image-20220130213947934"></p>
+<p>下载完成后在偏好设置中配置好picgo位置</p>
+<p>这样picgo就配置好了。</p>
+<h2 id="配置Gitee插件"><a href="#配置Gitee插件" class="headerlink" title="配置Gitee插件"></a>配置Gitee插件</h2><p>有很多地方可以作为图床，可以使用自己的服务器，也可以使用Github，Gitee这样的平台。</p>
+<p>现在picgo已经集成了Github和Gitee的插件，我们只需要打开picgo，然后搜索gitee插件</p>
+<p><img src="https://gitee.com/Hijack8/tc/raw/master/img/image-20220130214317847.png" alt="image-20220130214317847"></p>
+<p>直接下载这个插件，在图床设置中打开Gitee图床</p>
+<p><img src="https://gitee.com/Hijack8/tc/raw/master/img/image-20220130214454423.png" alt="image-20220130214454423"></p>
+<p>在这里面需要输入三个信息，owner是你的Gitee用户名，repo是你新建的Gitee图床仓库，token是生成的私人令牌，这里仅介绍令牌如何生成。</p>
+<p><img src="https://gitee.com/Hijack8/tc/raw/master/img/image-20220130214741550.png" alt="image-20220130214741550"></p>
+<p>在码云账户中选择个人主页</p>
+<p><img src="https://gitee.com/Hijack8/tc/raw/master/img/image-20220130214809553.png" alt="image-20220130214809553"></p>
+<p>选择个人设置</p>
+<p><img src="https://gitee.com/Hijack8/tc/raw/master/img/image-20220130214828966.png" alt="image-20220130214828966"></p>
+<p>选择私人令牌，生成令牌即可。</p>
+<h2 id="如何使用"><a href="#如何使用" class="headerlink" title="如何使用"></a>如何使用</h2><p>在平时记录笔记的时候可以将图片直接保存到本地，这样是最稳妥的，所以可以这样设置</p>
+<p><img src="https://gitee.com/Hijack8/tc/raw/master/img/image-20220130214953350.png" alt="image-20220130214953350"></p>
+<p>这样首选就是保存到本地一个相同路径的同名文件夹中。</p>
+<p>然后我们如果想上传这个图片直接右键上传图片即可。</p>
+<p><img src="https://gitee.com/Hijack8/tc/raw/master/img/image-20220130215319056.png" alt="image-20220130215319056"></p>
+<p>可以发现我们的码云仓库确实上传了一堆图片。</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/Typora/" rel="tag"><i class="fa fa-tag"></i> Typora</a>
+              <a href="/tags/%E5%9B%BE%E5%BA%8A/" rel="tag"><i class="fa fa-tag"></i> 图床</a>
+              <a href="/tags/Markdown/" rel="tag"><i class="fa fa-tag"></i> Markdown</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/01/26/%E5%A4%A7%E5%B8%85%E8%AF%AD%E5%BD%95/" rel="prev" title="大帅语录">
+      <i class="fa fa-chevron-left"></i> 大帅语录
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2022/01/30/%E6%89%BE%E4%B8%8D%E5%88%B0gpedit-msc%E6%80%8E%E4%B9%88%E5%8A%9E/" rel="next" title="找不到gpedit.msc怎么办">
+      找不到gpedit.msc怎么办 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%8B%E8%BD%BDpicgo%E8%BD%AF%E4%BB%B6"><span class="nav-number">1.</span> <span class="nav-text">下载picgo软件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%85%8D%E7%BD%AEGitee%E6%8F%92%E4%BB%B6"><span class="nav-number">2.</span> <span class="nav-text">配置Gitee插件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8"><span class="nav-number">3.</span> <span class="nav-text">如何使用</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="ShallowLine"
+      src="/images/haocun.jpg">
+  <p class="site-author-name" itemprop="name">ShallowLine</p>
+  <div class="site-description" itemprop="description">Blog of a Programmer</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives">
+        
+          <span class="site-state-item-count">26</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories">
+          
+        <span class="site-state-item-count">16</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">31</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/hijack8" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;hijack8" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:1286285985@qq.com" title="E-Mail → mailto:1286285985@qq.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ShallowLine</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
+  </div><script color="0,0,255" opacity="0.5" zIndex="-1" count="99" src="https://cdn.jsdelivr.net/npm/canvas-nest.js@1/dist/canvas-nest.js"></script>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib1/anime.min.js"></script>
+  <script src="/lib1/velocity/velocity.min.js"></script>
+  <script src="/lib1/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
