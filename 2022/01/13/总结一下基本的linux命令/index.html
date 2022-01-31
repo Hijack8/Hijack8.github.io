@@ -28,7 +28,7 @@
 <meta property="og:description" content="持续更新">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-01-13T12:30:18.000Z">
-<meta property="article:modified_time" content="2022-01-31T10:59:14.242Z">
+<meta property="article:modified_time" content="2022-01-31T15:29:21.023Z">
 <meta property="article:author" content="ShallowLine">
 <meta property="article:tag" content="linux">
 <meta name="twitter:card" content="summary">
@@ -225,7 +225,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-01-31 18:59:14" itemprop="dateModified" datetime="2022-01-31T18:59:14+08:00">2022-01-31</time>
+                <time title="Modified: 2022-01-31 23:29:21" itemprop="dateModified" datetime="2022-01-31T23:29:21+08:00">2022-01-31</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -271,6 +271,10 @@
 <li><p>touch 新建一个文件</p>
 </li>
 <li><p>rm 删除一个文件</p>
+<ul>
+<li>rm -r 删除目录内部的所有内容</li>
+<li>rm -f 强制删除</li>
+</ul>
 </li>
 <li><p>mkdir 新建一个目录</p>
 <ul>
@@ -305,6 +309,33 @@
 <li>wc -c 统计字节数</li>
 <li>wc -m 统计字符数</li>
 <li>wc -L 最长行的长度</li>
+</ul>
+</li>
+<li><p>echo 输出命令</p>
+<ul>
+<li>echo hello &gt; /root/a   新建a文件，其中写入hello</li>
+<li>echo Linux &gt;&gt;  /root/a 在a中后面写入Linux</li>
+</ul>
+</li>
+<li><p>ln 建立链接</p>
+<ul>
+<li>ln -s 建立软链接</li>
+<li>ln 建立硬链接</li>
+</ul>
+</li>
+<li><p>cat 显示文本文件</p>
+<ul>
+<li>cat -n  显示行号</li>
+<li>cat -s 合并空白行</li>
+<li>cat -b 非空输出行编号</li>
+<li>cat -E 每行结束显示<code>$</code></li>
+</ul>
+</li>
+<li><p>sort 文件 排序</p>
+</li>
+<li><p>chmod 设置权限</p>
+<ul>
+<li>chmod u+x 设置可执行权限</li>
 </ul>
 </li>
 </ul>

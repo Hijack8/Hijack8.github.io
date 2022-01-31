@@ -27,14 +27,30 @@
 <meta property="og:site_name" content="ShallowLine&#39;sBlog">
 <meta property="og:description" content="linux文件类型1 普通文件例如txt文件等。 利用ls -lh命令查看文件属性，发现对应属性为 - 2 目录文件属性为d">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://hijack8.github.io/2022/01/31/linux%E5%AE%9E%E7%94%A8%E5%AD%A6%E4%B9%A0/image-20220131175420142.png">
+<meta property="og:image" content="https://gitee.com/Hijack8/tc/raw/master/img2/image-20220131175420142.png">
 <meta property="og:image" content="https://gitee.com/Hijack8/tc/raw/master/img2/image-20220131175327512.png">
+<meta property="og:image" content="https://gitee.com/Hijack8/tc/raw/master/img2/image-20220131194142784.png">
+<meta property="og:image" content="https://gitee.com/Hijack8/tc/raw/master/img2/image-20220131194355272.png">
+<meta property="og:image" content="https://gitee.com/Hijack8/tc/raw/master/img2/image-20220131194722149.png">
+<meta property="og:image" content="https://gitee.com/Hijack8/tc/raw/master/img2/image-20220131194839938.png">
+<meta property="og:image" content="https://gitee.com/Hijack8/tc/raw/master/img2/image-20220131195244891.png">
+<meta property="og:image" content="https://gitee.com/Hijack8/tc/raw/master/img2/image-20220131195316516.png">
+<meta property="og:image" content="https://gitee.com/Hijack8/tc/raw/master/img2/image-20220131195359017.png">
+<meta property="og:image" content="https://gitee.com/Hijack8/tc/raw/master/img2/image-20220131195508443.png">
+<meta property="og:image" content="https://gitee.com/Hijack8/tc/raw/master/img2/image-20220131195624305.png">
+<meta property="og:image" content="https://gitee.com/Hijack8/tc/raw/master/img2/image-20220131205510102.png">
+<meta property="og:image" content="https://gitee.com/Hijack8/tc/raw/master/img2/image-20220131214308209.png">
+<meta property="og:image" content="https://gitee.com/Hijack8/tc/raw/master/img2/image-20220131214602258.png">
+<meta property="og:image" content="https://gitee.com/Hijack8/tc/raw/master/img2/image-20220131215023447.png">
+<meta property="og:image" content="https://gitee.com/Hijack8/tc/raw/master/img2/image-20220131215143098.png">
+<meta property="og:image" content="https://gitee.com/Hijack8/tc/raw/master/img2/image-20220131215433962.png">
+<meta property="og:image" content="https://gitee.com/Hijack8/tc/raw/master/img2/image-20220131220247808.png">
 <meta property="article:published_time" content="2022-01-31T09:48:02.000Z">
-<meta property="article:modified_time" content="2022-01-31T11:10:36.185Z">
+<meta property="article:modified_time" content="2022-01-31T15:31:03.287Z">
 <meta property="article:author" content="ShallowLine">
 <meta property="article:tag" content="linux">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://hijack8.github.io/2022/01/31/linux%E5%AE%9E%E7%94%A8%E5%AD%A6%E4%B9%A0/image-20220131175420142.png">
+<meta name="twitter:image" content="https://gitee.com/Hijack8/tc/raw/master/img2/image-20220131175420142.png">
 
 <link rel="canonical" href="http://hijack8.github.io/2022/01/31/linux%E5%AE%9E%E7%94%A8%E5%AD%A6%E4%B9%A0/">
 
@@ -222,7 +238,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2022-01-31 17:48:02 / Modified: 19:10:36" itemprop="dateCreated datePublished" datetime="2022-01-31T17:48:02+08:00">2022-01-31</time>
+              <time title="Created: 2022-01-31 17:48:02 / Modified: 23:31:03" itemprop="dateCreated datePublished" datetime="2022-01-31T17:48:02+08:00">2022-01-31</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -252,7 +268,7 @@
 
 <h3 id="3-设备文件"><a href="#3-设备文件" class="headerlink" title="3 设备文件"></a>3 设备文件</h3><h4 id="块设备文件"><a href="#块设备文件" class="headerlink" title="块设备文件"></a>块设备文件</h4><p>属性为<strong>b</strong></p>
 <p>例如dev文件夹下的sda文件，表示SCSI硬盘，hda表示IDE硬盘。</p>
-<p><img src="/2022/01/31/linux%E5%AE%9E%E7%94%A8%E5%AD%A6%E4%B9%A0/image-20220131175420142.png" alt="image-20220131175420142"></p>
+<p><img src="https://gitee.com/Hijack8/tc/raw/master/img2/image-20220131175420142.png" alt="image-20220131175420142"></p>
 <h4 id="字符设备文件"><a href="#字符设备文件" class="headerlink" title="字符设备文件"></a>字符设备文件</h4><p>属性为<strong>c</strong></p>
 <p>例如dev下的null文件，任何送入这个设备的内容都会被忽略。</p>
 <p><img src="https://gitee.com/Hijack8/tc/raw/master/img2/image-20220131175327512.png" alt="image-20220131175327512"></p>
@@ -266,6 +282,57 @@
 <p>不能给目录硬链接。</p>
 <p>只能在同一个文件系统下建立。</p>
 <h3 id="软链接"><a href="#软链接" class="headerlink" title="软链接"></a>软链接</h3><p>包含了另一个文件的路径名，可以是任意文件或目录，可以链接不同文件系统的文件，和Windows下的快捷方式类似。</p>
+<h3 id="ln命令创建链接文件"><a href="#ln命令创建链接文件" class="headerlink" title="ln命令创建链接文件"></a><code>ln</code>命令创建链接文件</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ln -s 源文件 链接文件    ---- 软链接</span><br><span class="line">ln -d 源文件 链接文件</span><br></pre></td></tr></table></figure>
+
+<h3 id="硬链接实验"><a href="#硬链接实验" class="headerlink" title="硬链接实验"></a>硬链接实验</h3><p><img src="https://gitee.com/Hijack8/tc/raw/master/img2/image-20220131194142784.png" alt="image-20220131194142784"></p>
+<p><img src="https://gitee.com/Hijack8/tc/raw/master/img2/image-20220131194355272.png" alt="image-20220131194355272"></p>
+<p>两个硬链接文件的inode是一致的。</p>
+<p>改变a的内容，b的内容也跟着改变。</p>
+<p><img src="https://gitee.com/Hijack8/tc/raw/master/img2/image-20220131194722149.png" alt="image-20220131194722149"></p>
+<p>删除a，发现b的link数减为1。</p>
+<p><img src="https://gitee.com/Hijack8/tc/raw/master/img2/image-20220131194839938.png" alt="image-20220131194839938"></p>
+<h3 id="软链接实验"><a href="#软链接实验" class="headerlink" title="软链接实验"></a>软链接实验</h3><p>新建a ，b为a的软链接</p>
+<p><img src="https://gitee.com/Hijack8/tc/raw/master/img2/image-20220131195244891.png" alt="image-20220131195244891"></p>
+<p><img src="https://gitee.com/Hijack8/tc/raw/master/img2/image-20220131195316516.png" alt="image-20220131195316516"></p>
+<p>可以看到软链接确实类似快捷方式。</p>
+<p><img src="https://gitee.com/Hijack8/tc/raw/master/img2/image-20220131195359017.png" alt="image-20220131195359017"></p>
+<p>说明b的源文件还是a，链接数还是1。</p>
+<p><img src="https://gitee.com/Hijack8/tc/raw/master/img2/image-20220131195508443.png" alt="image-20220131195508443"></p>
+<p>二者inode也不同。</p>
+<p><img src="https://gitee.com/Hijack8/tc/raw/master/img2/image-20220131195624305.png" alt="image-20220131195624305"></p>
+<p>删除源文件，发现软链接也无法访问。</p>
+<h3 id="硬链接文件复制了源文件的inode，二者本质上可以看成是一样的文件，有同等的地位，删除其中一个，系统不会删去inode。"><a href="#硬链接文件复制了源文件的inode，二者本质上可以看成是一样的文件，有同等的地位，删除其中一个，系统不会删去inode。" class="headerlink" title="硬链接文件复制了源文件的inode，二者本质上可以看成是一样的文件，有同等的地位，删除其中一个，系统不会删去inode。"></a>硬链接文件复制了源文件的inode，二者本质上可以看成是一样的文件，有同等的地位，删除其中一个，系统不会删去inode。</h3><h3 id="软链接文件仅仅是一个具有inode号的一个新文件，文件中存储着另一个文件的路径名。"><a href="#软链接文件仅仅是一个具有inode号的一个新文件，文件中存储着另一个文件的路径名。" class="headerlink" title="软链接文件仅仅是一个具有inode号的一个新文件，文件中存储着另一个文件的路径名。"></a>软链接文件仅仅是一个具有inode号的一个新文件，文件中存储着另一个文件的路径名。</h3><h2 id="Shell编程"><a href="#Shell编程" class="headerlink" title="Shell编程"></a>Shell编程</h2><h3 id="简单的例子"><a href="#简单的例子" class="headerlink" title="简单的例子"></a>简单的例子</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> !/bin/bash</span></span><br><span class="line"><span class="meta">#</span><span class="bash">filename:date</span></span><br><span class="line">echo &quot;Mr.$USER,Today is:&quot;</span><br><span class="line">echo &#x27;date&#x27;</span><br><span class="line">echo Whish you a lucky day!</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://gitee.com/Hijack8/tc/raw/master/img2/image-20220131205510102.png" alt="image-20220131205510102"></p>
+<h2 id="用户账户"><a href="#用户账户" class="headerlink" title="用户账户"></a>用户账户</h2><ul>
+<li><p>root用户</p>
+<p>UID为0</p>
+</li>
+<li><p>系统用户</p>
+<p>系统自身必不可少的用户，比如bin、ftp、email 。UID为1~999</p>
+</li>
+<li><p>普通用户</p>
+<p>可以登录系统，在linux系统上进行普通操作，UID为1000~。。。</p>
+</li>
+</ul>
+<h3 id="etc-passwd-文件"><a href="#etc-passwd-文件" class="headerlink" title="/etc/passwd 文件"></a>/etc/passwd 文件</h3><p>linux中所有用户都记录在这个文件中</p>
+<p><img src="https://gitee.com/Hijack8/tc/raw/master/img2/image-20220131214308209.png" alt="image-20220131214308209"></p>
+<p>  这就是我当前用户的信息</p>
+<p>这个x是密码，实际上被映射到shadow文件中。</p>
+<h3 id="etc-shadow文件"><a href="#etc-shadow文件" class="headerlink" title="etc/shadow文件"></a>etc/shadow文件</h3><p><img src="https://gitee.com/Hijack8/tc/raw/master/img2/image-20220131214602258.png" alt="image-20220131214602258"></p>
+<p>这就是加密的密码</p>
+<h2 id="创建用户"><a href="#创建用户" class="headerlink" title="创建用户"></a>创建用户</h2><p>创建zhangsan</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">useradd zhangsan</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://gitee.com/Hijack8/tc/raw/master/img2/image-20220131215023447.png" alt="image-20220131215023447"></p>
+<p>改密码</p>
+<p><img src="https://gitee.com/Hijack8/tc/raw/master/img2/image-20220131215143098.png" alt="image-20220131215143098"></p>
+<p>创建属于root成员的pp用户</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">useradd -g root pp</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://gitee.com/Hijack8/tc/raw/master/img2/image-20220131215433962.png" alt="image-20220131215433962"></p>
+<p>可以看到用户的GID字段为0，表示为root群组。</p>
+<h2 id="组群账户"><a href="#组群账户" class="headerlink" title="组群账户"></a>组群账户</h2><h3 id="etc-group"><a href="#etc-group" class="headerlink" title="/etc/group"></a>/etc/group</h3><p><img src="https://gitee.com/Hijack8/tc/raw/master/img2/image-20220131220247808.png" alt="image-20220131220247808"></p>
 
     </div>
 
@@ -347,7 +414,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#linux%E6%96%87%E4%BB%B6%E7%B1%BB%E5%9E%8B"><span class="nav-number">1.</span> <span class="nav-text">linux文件类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E6%99%AE%E9%80%9A%E6%96%87%E4%BB%B6"><span class="nav-number">1.1.</span> <span class="nav-text">1 普通文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E7%9B%AE%E5%BD%95%E6%96%87%E4%BB%B6"><span class="nav-number">1.2.</span> <span class="nav-text">2 目录文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E8%AE%BE%E5%A4%87%E6%96%87%E4%BB%B6"><span class="nav-number">1.3.</span> <span class="nav-text">3 设备文件</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9D%97%E8%AE%BE%E5%A4%87%E6%96%87%E4%BB%B6"><span class="nav-number">1.3.1.</span> <span class="nav-text">块设备文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E8%AE%BE%E5%A4%87%E6%96%87%E4%BB%B6"><span class="nav-number">1.3.2.</span> <span class="nav-text">字符设备文件</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-%E7%AE%A1%E9%81%93%E6%96%87%E4%BB%B6"><span class="nav-number">1.4.</span> <span class="nav-text">4 管道文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-%E9%93%BE%E6%8E%A5%E6%96%87%E4%BB%B6"><span class="nav-number">1.5.</span> <span class="nav-text">5 链接文件</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%A1%AC%E9%93%BE%E6%8E%A5%E6%96%87%E4%BB%B6"><span class="nav-number">1.5.1.</span> <span class="nav-text">硬链接文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BD%AF%E9%93%BE%E6%8E%A5%E6%96%87%E4%BB%B6"><span class="nav-number">1.5.2.</span> <span class="nav-text">软链接文件</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%93%BE%E6%8E%A5%E6%96%87%E4%BB%B6-%E2%80%94-%E5%85%B1%E4%BA%AB%E6%96%87%E4%BB%B6"><span class="nav-number">2.</span> <span class="nav-text">链接文件 — 共享文件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A1%AC%E9%93%BE%E6%8E%A5"><span class="nav-number">2.1.</span> <span class="nav-text">硬链接</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BD%AF%E9%93%BE%E6%8E%A5"><span class="nav-number">2.2.</span> <span class="nav-text">软链接</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#linux%E6%96%87%E4%BB%B6%E7%B1%BB%E5%9E%8B"><span class="nav-number">1.</span> <span class="nav-text">linux文件类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E6%99%AE%E9%80%9A%E6%96%87%E4%BB%B6"><span class="nav-number">1.1.</span> <span class="nav-text">1 普通文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E7%9B%AE%E5%BD%95%E6%96%87%E4%BB%B6"><span class="nav-number">1.2.</span> <span class="nav-text">2 目录文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E8%AE%BE%E5%A4%87%E6%96%87%E4%BB%B6"><span class="nav-number">1.3.</span> <span class="nav-text">3 设备文件</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9D%97%E8%AE%BE%E5%A4%87%E6%96%87%E4%BB%B6"><span class="nav-number">1.3.1.</span> <span class="nav-text">块设备文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E8%AE%BE%E5%A4%87%E6%96%87%E4%BB%B6"><span class="nav-number">1.3.2.</span> <span class="nav-text">字符设备文件</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-%E7%AE%A1%E9%81%93%E6%96%87%E4%BB%B6"><span class="nav-number">1.4.</span> <span class="nav-text">4 管道文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-%E9%93%BE%E6%8E%A5%E6%96%87%E4%BB%B6"><span class="nav-number">1.5.</span> <span class="nav-text">5 链接文件</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%A1%AC%E9%93%BE%E6%8E%A5%E6%96%87%E4%BB%B6"><span class="nav-number">1.5.1.</span> <span class="nav-text">硬链接文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BD%AF%E9%93%BE%E6%8E%A5%E6%96%87%E4%BB%B6"><span class="nav-number">1.5.2.</span> <span class="nav-text">软链接文件</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%93%BE%E6%8E%A5%E6%96%87%E4%BB%B6-%E2%80%94-%E5%85%B1%E4%BA%AB%E6%96%87%E4%BB%B6"><span class="nav-number">2.</span> <span class="nav-text">链接文件 — 共享文件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A1%AC%E9%93%BE%E6%8E%A5"><span class="nav-number">2.1.</span> <span class="nav-text">硬链接</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BD%AF%E9%93%BE%E6%8E%A5"><span class="nav-number">2.2.</span> <span class="nav-text">软链接</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ln%E5%91%BD%E4%BB%A4%E5%88%9B%E5%BB%BA%E9%93%BE%E6%8E%A5%E6%96%87%E4%BB%B6"><span class="nav-number">2.3.</span> <span class="nav-text">ln命令创建链接文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A1%AC%E9%93%BE%E6%8E%A5%E5%AE%9E%E9%AA%8C"><span class="nav-number">2.4.</span> <span class="nav-text">硬链接实验</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BD%AF%E9%93%BE%E6%8E%A5%E5%AE%9E%E9%AA%8C"><span class="nav-number">2.5.</span> <span class="nav-text">软链接实验</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A1%AC%E9%93%BE%E6%8E%A5%E6%96%87%E4%BB%B6%E5%A4%8D%E5%88%B6%E4%BA%86%E6%BA%90%E6%96%87%E4%BB%B6%E7%9A%84inode%EF%BC%8C%E4%BA%8C%E8%80%85%E6%9C%AC%E8%B4%A8%E4%B8%8A%E5%8F%AF%E4%BB%A5%E7%9C%8B%E6%88%90%E6%98%AF%E4%B8%80%E6%A0%B7%E7%9A%84%E6%96%87%E4%BB%B6%EF%BC%8C%E6%9C%89%E5%90%8C%E7%AD%89%E7%9A%84%E5%9C%B0%E4%BD%8D%EF%BC%8C%E5%88%A0%E9%99%A4%E5%85%B6%E4%B8%AD%E4%B8%80%E4%B8%AA%EF%BC%8C%E7%B3%BB%E7%BB%9F%E4%B8%8D%E4%BC%9A%E5%88%A0%E5%8E%BBinode%E3%80%82"><span class="nav-number">2.6.</span> <span class="nav-text">硬链接文件复制了源文件的inode，二者本质上可以看成是一样的文件，有同等的地位，删除其中一个，系统不会删去inode。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BD%AF%E9%93%BE%E6%8E%A5%E6%96%87%E4%BB%B6%E4%BB%85%E4%BB%85%E6%98%AF%E4%B8%80%E4%B8%AA%E5%85%B7%E6%9C%89inode%E5%8F%B7%E7%9A%84%E4%B8%80%E4%B8%AA%E6%96%B0%E6%96%87%E4%BB%B6%EF%BC%8C%E6%96%87%E4%BB%B6%E4%B8%AD%E5%AD%98%E5%82%A8%E7%9D%80%E5%8F%A6%E4%B8%80%E4%B8%AA%E6%96%87%E4%BB%B6%E7%9A%84%E8%B7%AF%E5%BE%84%E5%90%8D%E3%80%82"><span class="nav-number">2.7.</span> <span class="nav-text">软链接文件仅仅是一个具有inode号的一个新文件，文件中存储着另一个文件的路径名。</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Shell%E7%BC%96%E7%A8%8B"><span class="nav-number">3.</span> <span class="nav-text">Shell编程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AE%80%E5%8D%95%E7%9A%84%E4%BE%8B%E5%AD%90"><span class="nav-number">3.1.</span> <span class="nav-text">简单的例子</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%A8%E6%88%B7%E8%B4%A6%E6%88%B7"><span class="nav-number">4.</span> <span class="nav-text">用户账户</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#etc-passwd-%E6%96%87%E4%BB%B6"><span class="nav-number">4.1.</span> <span class="nav-text">&#x2F;etc&#x2F;passwd 文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#etc-shadow%E6%96%87%E4%BB%B6"><span class="nav-number">4.2.</span> <span class="nav-text">etc&#x2F;shadow文件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E7%94%A8%E6%88%B7"><span class="nav-number">5.</span> <span class="nav-text">创建用户</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%84%E7%BE%A4%E8%B4%A6%E6%88%B7"><span class="nav-number">6.</span> <span class="nav-text">组群账户</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#etc-group"><span class="nav-number">6.1.</span> <span class="nav-text">&#x2F;etc&#x2F;group</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
