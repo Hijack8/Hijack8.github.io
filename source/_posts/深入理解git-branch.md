@@ -20,6 +20,8 @@ git checkout -b branch_test1
 
 可以看到我们的分支变为了branch_test1分支。
 
+<!--more-->
+
 ## ```git checkout master```切换为主分支
 
 ```
