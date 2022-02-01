@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib1/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"hijack8.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.json"};
+  </script>
+
+  <meta name="description" content="linux磁盘分区输入 1fdisk &#x2F;dev&#x2F;sda  进入fdisk界面，显示磁盘分区信息。  图中sda1是引导分区 blocks表示分区容量，默认一块为1KB linux文件系统对一个新的磁盘进行分区之后，要对这些分区进行格式化并创建文件系统，一个分区只有建立了文件系统才能使用。 两个主流文件系统：  XFS ext4  我们使用命令 1mkfs -v &#x2F;dev&#x2F;sda2  来查看分区的f">
+<meta property="og:type" content="article">
+<meta property="og:title" content="linux实用学习2">
+<meta property="og:url" content="http://hijack8.github.io/2022/02/01/linux%E5%AE%9E%E7%94%A8%E5%AD%A6%E4%B9%A02/index.html">
+<meta property="og:site_name" content="ShallowLine&#39;sBlog">
+<meta property="og:description" content="linux磁盘分区输入 1fdisk &#x2F;dev&#x2F;sda  进入fdisk界面，显示磁盘分区信息。  图中sda1是引导分区 blocks表示分区容量，默认一块为1KB linux文件系统对一个新的磁盘进行分区之后，要对这些分区进行格式化并创建文件系统，一个分区只有建立了文件系统才能使用。 两个主流文件系统：  XFS ext4  我们使用命令 1mkfs -v &#x2F;dev&#x2F;sda2  来查看分区的f">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://gitee.com/Hijack8/tc/raw/master/img2/image-20220201084206440.png">
+<meta property="og:image" content="https://gitee.com/Hijack8/tc/raw/master/img2/image-20220201085237715.png">
+<meta property="og:image" content="https://gitee.com/Hijack8/tc/raw/master/img2/image-20220201090217010.png">
+<meta property="og:image" content="https://gitee.com/Hijack8/tc/raw/master/img2/image-20220201091645444.png">
+<meta property="og:image" content="https://gitee.com/Hijack8/tc/raw/master/img2/image-20220201091741181.png">
+<meta property="og:image" content="https://gitee.com/Hijack8/tc/raw/master/img2/image-20220201091912557.png">
+<meta property="article:published_time" content="2022-02-01T00:33:52.000Z">
+<meta property="article:modified_time" content="2022-02-01T01:30:25.742Z">
+<meta property="article:author" content="ShallowLine">
+<meta property="article:tag" content="linux">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://gitee.com/Hijack8/tc/raw/master/img2/image-20220201084206440.png">
+
+<link rel="canonical" href="http://hijack8.github.io/2022/02/01/linux%E5%AE%9E%E7%94%A8%E5%AD%A6%E4%B9%A02/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>linux实用学习2 | ShallowLine'sBlog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">ShallowLine'sBlog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">Blog</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">33</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">17</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">28</span></a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://hijack8.github.io/2022/02/01/linux%E5%AE%9E%E7%94%A8%E5%AD%A6%E4%B9%A02/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/haocun.jpg">
+      <meta itemprop="name" content="ShallowLine">
+      <meta itemprop="description" content="Blog of a Programmer">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ShallowLine'sBlog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          linux实用学习2
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2022-02-01 08:33:52 / Modified: 09:30:25" itemprop="dateCreated datePublished" datetime="2022-02-01T08:33:52+08:00">2022-02-01</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/linux/" itemprop="url" rel="index"><span itemprop="name">linux</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="linux磁盘分区"><a href="#linux磁盘分区" class="headerlink" title="linux磁盘分区"></a>linux磁盘分区</h2><p>输入</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fdisk /dev/sda</span><br></pre></td></tr></table></figure>
+
+<p>进入fdisk界面，显示磁盘分区信息。</p>
+<p><img src="https://gitee.com/Hijack8/tc/raw/master/img2/image-20220201084206440.png" alt="image-20220201084206440"></p>
+<p>图中sda1是引导分区</p>
+<p>blocks表示分区容量，默认一块为1KB</p>
+<h2 id="linux文件系统"><a href="#linux文件系统" class="headerlink" title="linux文件系统"></a>linux文件系统</h2><p>对一个新的磁盘进行分区之后，要对这些分区进行格式化并创建文件系统，一个分区只有建立了文件系统才能使用。</p>
+<p>两个主流文件系统：</p>
+<ul>
+<li>XFS</li>
+<li>ext4</li>
+</ul>
+<p>我们使用命令</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkfs -v /dev/sda2</span><br></pre></td></tr></table></figure>
+
+<p>来查看分区的file system信息。</p>
+<p><img src="https://gitee.com/Hijack8/tc/raw/master/img2/image-20220201085237715.png" alt="image-20220201085237715"></p>
+<p>可以看到sda1为引导盘。</p>
+<p>使用命令</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df </span><br></pre></td></tr></table></figure>
+
+<p>查看文件系统的挂载情况。</p>
+<p><img src="https://gitee.com/Hijack8/tc/raw/master/img2/image-20220201090217010.png" alt="image-20220201090217010"></p>
+<p>所谓挂载，就是将某个硬件设备实际放在某个文件夹去访问。</p>
+<h2 id="tar文件"><a href="#tar文件" class="headerlink" title="tar文件"></a>tar文件</h2><ul>
+<li>压缩文件夹 </li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar cvf hello.tar hello </span><br></pre></td></tr></table></figure>
+
+<p><img src="https://gitee.com/Hijack8/tc/raw/master/img2/image-20220201091645444.png" alt="image-20220201091645444"></p>
+<p><img src="https://gitee.com/Hijack8/tc/raw/master/img2/image-20220201091741181.png" alt="image-20220201091741181"></p>
+<ul>
+<li>解压缩文件</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar xvf hello.tar jieya</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://gitee.com/Hijack8/tc/raw/master/img2/image-20220201091912557.png" alt="image-20220201091912557"></p>
+<ul>
+<li>压缩为gzip文件</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar zcvf hello.tar.gz hello</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>解压缩gzip文件</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar zxvf hello.tar.gz</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>压缩为bzip2</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar jcvf hello.tar.bz2 hello</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>解压缩bzip2</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar jxvf hello.tar.bz2</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>压缩为xz</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar Jcvf hello.tar.xz hello </span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>解压缩为xz</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar Jxvf hello.tar.xz</span><br></pre></td></tr></table></figure>
+
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/linux/" rel="tag"><i class="fa fa-tag"></i> linux</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/01/31/linux%E5%AE%9E%E7%94%A8%E5%AD%A6%E4%B9%A0/" rel="prev" title="linux实用学习">
+      <i class="fa fa-chevron-left"></i> linux实用学习
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2022/02/01/%E7%AE%97%E6%B3%95-%E5%8F%8C%E6%8C%87%E9%92%88-01/" rel="next" title="算法-双指针_01">
+      算法-双指针_01 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#linux%E7%A3%81%E7%9B%98%E5%88%86%E5%8C%BA"><span class="nav-number">1.</span> <span class="nav-text">linux磁盘分区</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#linux%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F"><span class="nav-number">2.</span> <span class="nav-text">linux文件系统</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tar%E6%96%87%E4%BB%B6"><span class="nav-number">3.</span> <span class="nav-text">tar文件</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="ShallowLine"
+      src="/images/haocun.jpg">
+  <p class="site-author-name" itemprop="name">ShallowLine</p>
+  <div class="site-description" itemprop="description">Blog of a Programmer</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives">
+        
+          <span class="site-state-item-count">28</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories">
+          
+        <span class="site-state-item-count">17</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">33</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/hijack8" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;hijack8" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:1286285985@qq.com" title="E-Mail → mailto:1286285985@qq.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ShallowLine</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
+  </div><script color="0,0,255" opacity="0.5" zIndex="-1" count="99" src="https://cdn.jsdelivr.net/npm/canvas-nest.js@1/dist/canvas-nest.js"></script>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib1/anime.min.js"></script>
+  <script src="/lib1/velocity/velocity.min.js"></script>
+  <script src="/lib1/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
