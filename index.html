@@ -298,7 +298,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2022-02-01 08:33:52 / Modified: 09:30:25" itemprop="dateCreated datePublished" datetime="2022-02-01T08:33:52+08:00">2022-02-01</time>
+              <time title="Created: 2022-02-01 08:33:52 / Modified: 11:19:10" itemprop="dateCreated datePublished" datetime="2022-02-01T08:33:52+08:00">2022-02-01</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -328,68 +328,14 @@
 <p><img src="https://gitee.com/Hijack8/tc/raw/master/img2/image-20220201084206440.png" alt="image-20220201084206440"></p>
 <p>图中sda1是引导分区</p>
 <p>blocks表示分区容量，默认一块为1KB</p>
-<h2 id="linux文件系统"><a href="#linux文件系统" class="headerlink" title="linux文件系统"></a>linux文件系统</h2><p>对一个新的磁盘进行分区之后，要对这些分区进行格式化并创建文件系统，一个分区只有建立了文件系统才能使用。</p>
-<p>两个主流文件系统：</p>
-<ul>
-<li>XFS</li>
-<li>ext4</li>
-</ul>
-<p>我们使用命令</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkfs -v /dev/sda2</span><br></pre></td></tr></table></figure>
-
-<p>来查看分区的file system信息。</p>
-<p><img src="https://gitee.com/Hijack8/tc/raw/master/img2/image-20220201085237715.png" alt="image-20220201085237715"></p>
-<p>可以看到sda1为引导盘。</p>
-<p>使用命令</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df </span><br></pre></td></tr></table></figure>
-
-<p>查看文件系统的挂载情况。</p>
-<p><img src="https://gitee.com/Hijack8/tc/raw/master/img2/image-20220201090217010.png" alt="image-20220201090217010"></p>
-<p>所谓挂载，就是将某个硬件设备实际放在某个文件夹去访问。</p>
-<h2 id="tar文件"><a href="#tar文件" class="headerlink" title="tar文件"></a>tar文件</h2><ul>
-<li>压缩文件夹 </li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar cvf hello.tar hello </span><br></pre></td></tr></table></figure>
-
-<p><img src="https://gitee.com/Hijack8/tc/raw/master/img2/image-20220201091645444.png" alt="image-20220201091645444"></p>
-<p><img src="https://gitee.com/Hijack8/tc/raw/master/img2/image-20220201091741181.png" alt="image-20220201091741181"></p>
-<ul>
-<li>解压缩文件</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar xvf hello.tar jieya</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://gitee.com/Hijack8/tc/raw/master/img2/image-20220201091912557.png" alt="image-20220201091912557"></p>
-<ul>
-<li>压缩为gzip文件</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar zcvf hello.tar.gz hello</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>解压缩gzip文件</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar zxvf hello.tar.gz</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>压缩为bzip2</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar jcvf hello.tar.bz2 hello</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>解压缩bzip2</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar jxvf hello.tar.bz2</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>压缩为xz</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar Jcvf hello.tar.xz hello </span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>解压缩为xz</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar Jxvf hello.tar.xz</span><br></pre></td></tr></table></figure>
-
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2022/02/01/linux%E5%AE%9E%E7%94%A8%E5%AD%A6%E4%B9%A02/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
