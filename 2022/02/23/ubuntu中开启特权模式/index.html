@@ -20,17 +20,24 @@
     var CONFIG = {"hostname":"hijack8.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.json"};
   </script>
 
-  <meta name="description" content="Blog of a Programmer">
-<meta property="og:type" content="website">
-<meta property="og:title" content="ShallowLine&#39;sBlog">
-<meta property="og:url" content="http://hijack8.github.io/categories/%E5%89%8D%E7%AB%AF/HTML/index.html">
+  <meta name="description" content="ubuntu开启特权模式即进入root用户下 1sudo su  一般视图下看到的是$开头 如图  进入特权模式后是以#开头 如图">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ubuntu中开启特权模式">
+<meta property="og:url" content="http://hijack8.github.io/2022/02/23/ubuntu%E4%B8%AD%E5%BC%80%E5%90%AF%E7%89%B9%E6%9D%83%E6%A8%A1%E5%BC%8F/index.html">
 <meta property="og:site_name" content="ShallowLine&#39;sBlog">
-<meta property="og:description" content="Blog of a Programmer">
+<meta property="og:description" content="ubuntu开启特权模式即进入root用户下 1sudo su  一般视图下看到的是$开头 如图  进入特权模式后是以#开头 如图">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://gitee.com/Hijack8/tc/raw/master/img2/image-20220223224056042.png">
+<meta property="og:image" content="https://gitee.com/Hijack8/tc/raw/master/img2/image-20220223224134363.png">
+<meta property="article:published_time" content="2022-02-23T14:38:05.000Z">
+<meta property="article:modified_time" content="2022-02-23T14:41:54.076Z">
 <meta property="article:author" content="ShallowLine">
+<meta property="article:tag" content="linux">
+<meta property="article:tag" content="ubuntu">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://gitee.com/Hijack8/tc/raw/master/img2/image-20220223224056042.png">
 
-<link rel="canonical" href="http://hijack8.github.io/categories/%E5%89%8D%E7%AB%AF/HTML/">
+<link rel="canonical" href="http://hijack8.github.io/2022/02/23/ubuntu%E4%B8%AD%E5%BC%80%E5%90%AF%E7%89%B9%E6%9D%83%E6%A8%A1%E5%BC%8F/">
 
 
 <script id="page-configurations">
@@ -38,12 +45,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'en'
   };
 </script>
 
-  <title>Category: HTML | ShallowLine'sBlog</title>
+  <title>ubuntu中开启特权模式 | ShallowLine'sBlog</title>
   
 
 
@@ -185,51 +192,97 @@
         <div class="content-wrap">
           
 
-          <div class="content category">
+          <div class="content post posts-expand">
             
 
+    
   
   
-  
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <h2 class="collection-header">HTML
-          <small>Category</small>
-        </h2>
-      </div>
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://hijack8.github.io/2022/02/23/ubuntu%E4%B8%AD%E5%BC%80%E5%90%AF%E7%89%B9%E6%9D%83%E6%A8%A1%E5%BC%8F/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/haocun.jpg">
+      <meta itemprop="name" content="ShallowLine">
+      <meta itemprop="description" content="Blog of a Programmer">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ShallowLine'sBlog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          ubuntu中开启特权模式
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2022-02-23 22:38:05 / Modified: 22:41:54" itemprop="dateCreated datePublished" datetime="2022-02-23T22:38:05+08:00">2022-02-23</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E9%9A%8F%E7%AC%94/" itemprop="url" rel="index"><span itemprop="name">随笔</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <span class="collection-header">2022</span>
+        <h2 id="ubuntu开启特权模式"><a href="#ubuntu开启特权模式" class="headerlink" title="ubuntu开启特权模式"></a>ubuntu开启特权模式</h2><p>即进入root用户下</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo su</span><br></pre></td></tr></table></figure>
+
+<p>一般视图下看到的是<code>$</code>开头 如图</p>
+<p><img src="https://gitee.com/Hijack8/tc/raw/master/img2/image-20220223224056042.png" alt="image-20220223224056042"></p>
+<p>进入特权模式后是以<code>#</code>开头 如图</p>
+<p><img src="https://gitee.com/Hijack8/tc/raw/master/img2/image-20220223224134363.png" alt="image-20220223224134363"></p>
+
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+    
+    
+    
 
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2022-01-16T15:58:09+08:00"
-              content="2022-01-16">
-          01-16
-        </time>
-      </div>
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/linux/" rel="tag"><i class="fa fa-tag"></i> linux</a>
+              <a href="/tags/ubuntu/" rel="tag"><i class="fa fa-tag"></i> ubuntu</a>
+          </div>
 
-      <div class="post-title">
-          <a class="post-title-link" href="/2022/01/16/%E5%89%8D%E7%AB%AFhtml/" itemprop="url">
-            <span itemprop="name">前端html</span>
-          </a>
-      </div>
+        
 
-    </header>
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/02/06/linux%E5%AE%9E%E7%94%A8%E5%AD%A6%E4%B9%A03/" rel="prev" title="linux实用学习3">
+      <i class="fa fa-chevron-left"></i> linux实用学习3
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
   </article>
-
-    </div>
-  </div>
   
   
-  
-
   
 
 
@@ -282,6 +335,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#ubuntu%E5%BC%80%E5%90%AF%E7%89%B9%E6%9D%83%E6%A8%A1%E5%BC%8F"><span class="nav-number">1.</span> <span class="nav-text">ubuntu开启特权模式</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
