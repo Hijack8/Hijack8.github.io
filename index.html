@@ -288,10 +288,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2022-02-06 11:28:30 / Modified: 14:53:48" itemprop="dateCreated datePublished" datetime="2022-02-06T11:28:30+08:00">2022-02-06</time>
+              <time title="Created: 2022-02-06 11:28:30" itemprop="dateCreated datePublished" datetime="2022-02-06T11:28:30+08:00">2022-02-06</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-02-23 22:45:14" itemprop="dateModified" datetime="2022-02-23T22:45:14+08:00">2022-02-23</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -319,67 +325,14 @@
 <li>批处理式进程 与终端无关，安排在指定时刻完成的一系列进程</li>
 <li>守护进程 引导系统时启动，以执行即时的操作系统任务。</li>
 </ul>
-<h3 id="查看系统进程信息"><a href="#查看系统进程信息" class="headerlink" title="查看系统进程信息"></a>查看系统进程信息</h3><ol>
-<li>显示所有进程</li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ps -e</span><br></pre></td></tr></table></figure>
-
-<ol start="2">
-<li>利用top命令动态查看进程</li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">top</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://gitee.com/Hijack8/tc/raw/master/img2/image-20220206114018767.png" alt="image-20220206114018767"></p>
-<h3 id="杀死进程"><a href="#杀死进程" class="headerlink" title="杀死进程"></a>杀死进程</h3><p>彻底杀死进程</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kill -9 1659</span><br></pre></td></tr></table></figure>
-
-<h2 id="linux网络基本配置"><a href="#linux网络基本配置" class="headerlink" title="linux网络基本配置"></a>linux网络基本配置</h2><h3 id="etc-resolv-conf"><a href="#etc-resolv-conf" class="headerlink" title="/etc/resolv.conf"></a>/etc/resolv.conf</h3><p>由域名服务器使用的配置文件</p>
-<p><img src="https://gitee.com/Hijack8/tc/raw/master/img2/image-20220206122038606.png" alt="image-20220206122038606"></p>
-<h3 id="etc-hosts"><a href="#etc-hosts" class="headerlink" title="/etc/hosts"></a>/etc/hosts</h3><p><img src="https://gitee.com/Hijack8/tc/raw/master/img2/image-20220206122411102.png" alt="image-20220206122411102"></p>
-<h3 id="etc-services"><a href="#etc-services" class="headerlink" title="/etc/services"></a>/etc/services</h3><p><img src="https://gitee.com/Hijack8/tc/raw/master/img2/image-20220206123025782.png" alt="image-20220206123025782"></p>
-<p>定义了linux系统中所有的服务名称，协议类型，服务的端口等信息。</p>
-<p><img src="https://gitee.com/Hijack8/tc/raw/master/img2/image-20220206123228756.png" alt="image-20220206123228756"></p>
-<h2 id="常用的网络命令"><a href="#常用的网络命令" class="headerlink" title="常用的网络命令"></a>常用的网络命令</h2><h3 id="traceroute"><a href="#traceroute" class="headerlink" title="traceroute"></a>traceroute</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">traceroute www.163.com</span><br></pre></td></tr></table></figure>
-
-<p>跟踪路径</p>
-<h3 id="ifconfig"><a href="#ifconfig" class="headerlink" title="ifconfig"></a>ifconfig</h3><h3 id="ping"><a href="#ping" class="headerlink" title="ping"></a>ping</h3><h3 id="netstat"><a href="#netstat" class="headerlink" title="netstat"></a>netstat</h3><p>显示内核路由信息</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">netstat -r</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://gitee.com/Hijack8/tc/raw/master/img2/image-20220206130733925.png" alt="image-20220206130733925"></p>
-<p>显示所有socket</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">netstat -a</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><code>-n</code> 直接使用ip地址不解析名称</li>
-<li><code>-u</code>udp</li>
-<li><code>-t</code>tcp</li>
-</ul>
-<h3 id="arp"><a href="#arp" class="headerlink" title="arp"></a>arp</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">arp -a</span><br></pre></td></tr></table></figure>
-
-<h3 id="tcpdump"><a href="#tcpdump" class="headerlink" title="tcpdump"></a>tcpdump</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tcpdump -i 网卡名</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="SSH"><a href="#SSH" class="headerlink" title="SSH"></a>SSH</h2><p>ftp和telnet使用明文来传输数据，这是不安全的，别有用心的人很有可能截获数据。</p>
-<p>通过ssh可以吧所有传输的数据进行加密。这样一来，可以避免攻击。</p>
-<h3 id="OpenSSH"><a href="#OpenSSH" class="headerlink" title="OpenSSH"></a>OpenSSH</h3><p>openssh是ssh的替代，openssh是免费的。</p>
-<p>ubuntu的ssh不会自动开启，但是一般我们使用的云服务器的ssh服务是自动开启的。</p>
-<p>通过</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install openssh-server</span><br></pre></td></tr></table></figure>
-
-<p>下载openssh。</p>
-<p>通过：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo gedit /etc/ssh/sshd_config</span><br></pre></td></tr></table></figure>
-
-<p>配置ssh信息。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br></pre></td><td class="code"><pre><span class="line">#	$OpenBSD: sshd_config,v 1.103 2018/04/09 20:41:22 tj Exp $</span><br><span class="line"></span><br><span class="line"># This is the sshd server system-wide configuration file.  See</span><br><span class="line"># sshd_config(5) for more information.</span><br><span class="line"></span><br><span class="line"># This sshd was compiled with PATH=/usr/bin:/bin:/usr/sbin:/sbin</span><br><span class="line"></span><br><span class="line"># The strategy used for options in the default sshd_config shipped with</span><br><span class="line"># OpenSSH is to specify options with their default value where</span><br><span class="line"># possible, but leave them commented.  Uncommented options override the</span><br><span class="line"># default value.</span><br><span class="line"></span><br><span class="line">Include /etc/ssh/sshd_config.d/*.conf</span><br><span class="line"></span><br><span class="line">Port 22</span><br><span class="line">#AddressFamily any</span><br><span class="line">ListenAddress 192.168.0.2    这里的ip一定要跟本机ip相同。</span><br><span class="line">Protocol 2</span><br><span class="line">#ListenAddress ::</span><br><span class="line"></span><br><span class="line">#HostKey /etc/ssh/ssh_host_rsa_key</span><br><span class="line">#HostKey /etc/ssh/ssh_host_ecdsa_key</span><br><span class="line">#HostKey /etc/ssh/ssh_host_ed25519_key</span><br><span class="line"></span><br><span class="line"># Ciphers and keying</span><br><span class="line">#RekeyLimit default none</span><br><span class="line"></span><br><span class="line"># Logging</span><br><span class="line">SyslogFacility AUTHPRIV</span><br><span class="line">#LogLevel INFO</span><br><span class="line"></span><br><span class="line"># Authentication:</span><br><span class="line"></span><br><span class="line">#LoginGraceTime 2m</span><br><span class="line">#PermitRootLogin prohibit-password</span><br><span class="line">#StrictModes yes</span><br><span class="line">#MaxAuthTries 6</span><br><span class="line">#MaxSessions 10</span><br><span class="line"></span><br><span class="line">#PubkeyAuthentication yes</span><br><span class="line"></span><br><span class="line"># Expect .ssh/authorized_keys2 to be disregarded by default in future.</span><br><span class="line">#AuthorizedKeysFile	.ssh/authorized_keys .ssh/authorized_keys2</span><br><span class="line"></span><br><span class="line">#AuthorizedPrincipalsFile none</span><br><span class="line"></span><br><span class="line">#AuthorizedKeysCommand none</span><br><span class="line">#AuthorizedKeysCommandUser nobody</span><br><span class="line"></span><br><span class="line"># For this to work you will also need host keys in /etc/ssh/ssh_known_hosts</span><br><span class="line">#HostbasedAuthentication no</span><br><span class="line"># Change to yes if you don&#x27;t trust ~/.ssh/known_hosts for</span><br><span class="line"># HostbasedAuthentication</span><br><span class="line">#IgnoreUserKnownHosts no</span><br><span class="line"># Don&#x27;t read the user&#x27;s ~/.rhosts and ~/.shosts files</span><br><span class="line">#IgnoreRhosts yes</span><br><span class="line"></span><br><span class="line"># To disable tunneled clear text passwords, change to no here!</span><br><span class="line">PasswordAuthentication yes</span><br><span class="line">PermitEmptyPasswords no</span><br><span class="line"></span><br><span class="line"># Change to yes to enable challenge-response passwords (beware issues with</span><br><span class="line"># some PAM modules and threads)</span><br><span class="line">ChallengeResponseAuthentication no</span><br><span class="line"></span><br><span class="line"># Kerberos options</span><br><span class="line">#KerberosAuthentication no</span><br><span class="line">#KerberosOrLocalPasswd yes</span><br><span class="line">#KerberosTicketCleanup yes</span><br><span class="line">#KerberosGetAFSToken no</span><br><span class="line"></span><br><span class="line"># GSSAPI options</span><br><span class="line">GSSAPIAuthentication yes</span><br><span class="line">GSSAPICleanupCredentials yes</span><br><span class="line">#GSSAPIStrictAcceptorCheck yes</span><br><span class="line">#GSSAPIKeyExchange no</span><br><span class="line"></span><br><span class="line"># Set this to &#x27;yes&#x27; to enable PAM authentication, account processing,</span><br><span class="line"># and session processing. If this is enabled, PAM authentication will</span><br><span class="line"># be allowed through the ChallengeResponseAuthentication and</span><br><span class="line"># PasswordAuthentication.  Depending on your PAM configuration,</span><br><span class="line"># PAM authentication via ChallengeResponseAuthentication may bypass</span><br><span class="line"># the setting of &quot;PermitRootLogin without-password&quot;.</span><br><span class="line"># If you just want the PAM account and session checks to run without</span><br><span class="line"># PAM authentication, then enable this but set PasswordAuthentication</span><br><span class="line"># and ChallengeResponseAuthentication to &#x27;no&#x27;.</span><br><span class="line">UsePAM yes</span><br><span class="line"></span><br><span class="line">#AllowAgentForwarding yes</span><br><span class="line">#AllowTcpForwarding yes</span><br><span class="line">#GatewayPorts no</span><br><span class="line">X11Forwarding yes</span><br><span class="line">#X11DisplayOffset 10</span><br><span class="line">#X11UseLocalhost yes</span><br><span class="line">#PermitTTY yes</span><br><span class="line">PrintMotd no</span><br><span class="line">#PrintLastLog yes</span><br><span class="line">#TCPKeepAlive yes</span><br><span class="line">#PermitUserEnvironment no</span><br><span class="line">#Compression delayed</span><br><span class="line">#ClientAliveInterval 0</span><br><span class="line">#ClientAliveCountMax 3</span><br><span class="line">#UseDNS no</span><br><span class="line">#PidFile /var/run/sshd.pid</span><br><span class="line">#MaxStartups 10:30:100</span><br><span class="line">#PermitTunnel no</span><br><span class="line">#ChrootDirectory none</span><br><span class="line">#VersionAddendum none</span><br><span class="line"></span><br><span class="line"># no default banner path</span><br><span class="line">#Banner none</span><br><span class="line"></span><br><span class="line"># Allow client to pass locale environment variables</span><br><span class="line">AcceptEnv LANG LC_*</span><br><span class="line"></span><br><span class="line"># override default of no subsystems</span><br><span class="line">Subsystem	sftp	/usr/lib/openssh/sftp-server</span><br><span class="line"></span><br><span class="line"># Example of overriding settings on a per-user basis</span><br><span class="line">#Match User anoncvs</span><br><span class="line">#	X11Forwarding no</span><br><span class="line">#	AllowTcpForwarding no</span><br><span class="line">#	PermitTTY no</span><br><span class="line">#	ForceCommand cvs server</span><br></pre></td></tr></table></figure>
-
-<p>然后启动sshd</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl start sshd.service</span><br></pre></td></tr></table></figure>
-
-<p>就可以通过另一个设备来访问了。</p>
-<p><img src="https://gitee.com/Hijack8/tc/raw/master/img2/image-20220206145256724.png" alt="image-20220206145256724"></p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2022/02/06/linux%E5%AE%9E%E7%94%A8%E5%AD%A6%E4%B9%A03/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
